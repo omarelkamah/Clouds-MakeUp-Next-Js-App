@@ -15,7 +15,7 @@ module.exports = {
         backLightDark: "#1e3329",
         backGray: "#b8b8b8",
         backLightGray: "#fafafa",
-        backYellow: "#ffd470",
+        backYellow: "#ffce53",
       },
     },
   },
