@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         backDark: "#0c080b",
         backLightDark: "#1e3329",
-        backGray: "#b8b8b8",
+        backGray: "#acacac",
         backLightGray: "#fafafa",
         backYellow: "#ffce53",
       },

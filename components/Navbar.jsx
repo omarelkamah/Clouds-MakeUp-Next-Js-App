@@ -2,13 +2,12 @@ import React from 'react'
 import Link from 'next/link'
 import { AiFillHeart, AiOutlineSearch } from 'react-icons/ai'
 import { FaOpencart } from 'react-icons/fa'
+import BrandLogo from './BrandLogo'
 
 const Navbar = () => {
   return (
-    <div className='flex justify-between items-center p-4 px-8 font-krona'>
-      <div className='logo text-2xl'>
-        <Link href='/'>wavey</Link>
-      </div>
+    <div className='container mx-auto flex justify-between items-center p-4 px-8 font-krona'>
+      <BrandLogo />
       <div className='text-xs flex gap-4'>
         <Link href='/' className=''>
           Skincare
