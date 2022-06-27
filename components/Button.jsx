@@ -7,7 +7,7 @@ const Button = ({ title, bgColor, textColor }) => {
       <span
         className={`bg-backYellow text-backDark ${textColor &&
           textColor} ${bgColor &&
-          bgColor} w-fit p-2 px-8 rounded-xl text-sm font-krona  block cursor-pointer`}
+          bgColor} w-fit p-2 py-4 px-8 rounded-full font-bold text-sm font-krona  block cursor-pointer`}
       >
         {title}
       </span>

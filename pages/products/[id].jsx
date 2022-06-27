@@ -1,9 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { AiFillHeart } from 'react-icons/ai'
+import { AiFillHeart, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import Price from '../../components/Price'
 import Button from '../../components/Button'
+import Features from '../../components/Features'
+import Poster from '../../components/Poster'
 
 const Product = () => {
   return (
@@ -14,14 +16,13 @@ const Product = () => {
         </h5>
         <p className='text-backGray'>root shapmoo</p>
       </div>
-      <div className='flex'>
-        <div className='flex-1'>
+      <div className='flex flex-wrap gap-16 my-10'>
+        <div className='h-80 w-80 relative'>
           <Image
-            src='/images/product.png'
-            alt='Product Image'
-            width='200'
-            height='200'
-            layout='responsive'
+            src='/images/banner.png'
+            layout='fill'
+            objectFit='cover'
+            alt='Product'
           />
         </div>
         <div className='flex-1'>
@@ -39,11 +40,15 @@ const Product = () => {
           </div>
           <div className='flex items-center justify-between my-10'>
             <Price price='20' />
-            {/* Add Counter */}
+            <div className='flex font-krona items-center gap-3 shadow-lg p-2 rounded-lg'>
+              <AiOutlineMinus className='cursor-pointer' />
+              <span>1</span>
+              <AiOutlinePlus className='cursor-pointer' />
+            </div>
             <Button title='add to basket' />
           </div>
           <div>
-            <h5 className='font-krona'>description</h5>
+            <h5 className='font-krona text-backDark'>description</h5>
             <p className='font-base'>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
               consequuntur rerum pariatur soluta voluptates corrupti
@@ -53,6 +58,12 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <Features />
+      <div>
+        <h3 className='text-center font-krona text-xl'>For You</h3>
+        <Product />
+      </div>
+      <Poster bottom='0' />
     </div>
   )
 }

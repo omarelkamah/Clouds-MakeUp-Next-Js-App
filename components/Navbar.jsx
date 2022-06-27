@@ -1,27 +1,30 @@
 import React from 'react'
 import Link from 'next/link'
-import { AiFillHeart, AiOutlineSearch } from 'react-icons/ai'
-import { FaOpencart } from 'react-icons/fa'
+import { AiFillHeart } from 'react-icons/ai'
+import { BsHandbag } from 'react-icons/bs'
 import BrandLogo from './BrandLogo'
 
 const Navbar = () => {
   return (
-    <div className='container mx-auto flex justify-between items-center p-4 px-8 font-krona'>
+    <div className='container mx-auto flex justify-between items-center p-4 px-8 font-krona font-bold'>
       <BrandLogo />
-      <div className='text-xs flex gap-4'>
-        <Link href='/' className=''>
-          Skincare
+      <div className='flex items-center gap-4'>
+        <div className='text-xs flex gap-8'>
+          <Link href='/' className=''>
+            home
+          </Link>
+          <Link href='/' skincare>
+            search
+          </Link>
+          <Link href='/about'>about</Link>
+        </div>
+        <Link href='/'>
+          <AiFillHeart className='text-xl cursor-pointer' />
         </Link>
-        <Link href='/' skincare>
-          Make-up
+
+        <Link href='/'>
+          <BsHandbag className='text-xl cursor-pointer' />
         </Link>
-        <Link href='/'>mens</Link>
-        <Link href='/'>Superelements</Link>
-      </div>
-      <div className='flex gap-4'>
-        <AiFillHeart />
-        <AiOutlineSearch />
-        <FaOpencart />
       </div>
     </div>
   )

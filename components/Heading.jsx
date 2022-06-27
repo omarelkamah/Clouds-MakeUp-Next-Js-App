@@ -3,9 +3,9 @@ import Button from './Button'
 
 const Heading = ({ title }) => {
   return (
-    <div className='flex justify-between font-base'>
+    <div className='flex justify-between font-krona mb-5'>
       <h4 className='text-2xl'>{title}</h4>
-      <Button title='more' />
+      <Button title='see more' />
     </div>
   )
 }

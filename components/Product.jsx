@@ -1,24 +1,31 @@
 import React from 'react'
 import Image from 'next/image'
 import Price from './Price'
+import Link from 'next/link'
 
-const Product = () => {
+const Product = ({ id, name, price, image }) => {
   return (
-    <div className='font-base flex flex-col w-[310px] items-center'>
-      <Image
-        src='/images/product.png'
-        width='100px'
-        height='100px'
-        alt='Product'
-      />
-      <div className='flex flex-col'>
-        <a href='/' className='text-backYellow '>
-          categorie heare
-        </a>
-        <h4 className=''>Root Cosmetics Anti-Everything Shampoo for Woman</h4>
-        <Price price='12.99' />
+    <Link href={`/products/${id}`}>
+      <div className='flex w-[250px] flex-col align-center cursor-pointer rounded-md mb-6 mr-6 px-4 py-6 transform hover:scale-105 hover:shadow-xl transition delay-50 duration-300 ease-in-out'>
+        <div className='h-40 relative'>
+          <Image
+            src={image}
+            layout='fill'
+            objectFit='cover'
+            // width='50px'
+            // height='50px'
+            alt='Product'
+          />
+        </div>
+        <div className='flex flex-col'>
+          <Link href={``}>
+            <a className='text-backYellow text-sm'>categorie heare</a>
+          </Link>
+          <h4 className='font-base my-4 leading-5'>{name}</h4>
+          <Price price={price} />
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
