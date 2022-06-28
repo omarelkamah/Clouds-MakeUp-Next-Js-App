@@ -8,14 +8,14 @@ const Product = ({ id, name, price, image }) => {
     <Link href={`/products/${id}`}>
       <div className='flex w-[250px] flex-col align-center cursor-pointer rounded-md mb-6 mr-6 px-4 py-6 transform hover:scale-105 hover:shadow-xl transition delay-50 duration-300 ease-in-out'>
         <div className='h-40 relative'>
-          <Image
+          {/* <Image
             src={image}
             layout='fill'
             objectFit='cover'
             // width='50px'
             // height='50px'
             alt='Product'
-          />
+          /> */}
         </div>
         <div className='flex flex-col'>
           <Link href={``}>

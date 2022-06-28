@@ -10,26 +10,26 @@ export const getStaticProps = async () => {
   const data = await res.json()
 
   return {
-    props: { products: data }
+    props: { products: data.data }
   }
 }
 
-const Products = () => {
-  const [products, setProducts] = useState([])
-  useEffect(() => {
-    axios
-      .get(
-        'https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Vegan&product_type=blush'
-      )
-      .then(res => setProducts(res.data))
-  }, [])
+const Products = ({ products }) => {
+  // const [products, setProducts] = useState([])
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       'https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Vegan&product_type=blush'
+  //     )
+  //     .then(res => setProducts(res.data))
+  // }, [])
   console.log(products)
 
   return (
     <div className='container mx-auto my-5'>
       <Heading title='Clean beauty' />
       <div className='flex flex-wrap justify-center'>
-        {products.map(product => (
+        {/* {products.map(product => (
           <Product
             key={product.id}
             id={product.id}
@@ -37,7 +37,7 @@ const Products = () => {
             image={product.image_link}
             price={product.price}
           />
-        ))}
+        ))} */}
       </div>
     </div>
   )

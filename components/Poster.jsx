@@ -7,7 +7,7 @@ const Poster = ({ bottom }) => {
   return (
     <div
       className={`container mx-auto flex items-center justify-between flex-wrap relative ${bottom &&
-        'button-0'} -bottom-48  bg-backLightDark text-white py-8 px-20`}
+        'bottom-0'} -bottom-48  bg-backLightDark text-white py-8 px-20`}
     >
       <div className=''>
         <h3 className='font-krona text-lg mb-4'>
