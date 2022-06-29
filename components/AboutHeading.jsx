@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const AboutHeading = () => {
@@ -5,7 +6,9 @@ const AboutHeading = () => {
     <div className='container mx-auto'>
       <div className='flex justify-center items-center my-20'>
         <span className='w-11 h-11 rounded-full bg-backYellow block' />
-        <h1 className='font-krona font-bold text-4xl -ml-5'>Clouds</h1>
+        <Link href='/'>
+          <a className='font-krona font-bold text-4xl -ml-5'>Clouds</a>
+        </Link>
       </div>
       <div className='mx-auto w-2/3'>
         <p className='font-base mt-4 leading-7 mb-4'>
