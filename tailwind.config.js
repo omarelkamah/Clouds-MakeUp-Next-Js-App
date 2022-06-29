@@ -17,6 +17,9 @@ module.exports = {
         backLightGray: "#e5e7eb",
         backYellow: "#ffce53",
       },
+      flex: {
+        2: "2 2 0%",
+      },
     },
   },
   plugins: [],

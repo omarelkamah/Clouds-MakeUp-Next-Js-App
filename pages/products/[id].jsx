@@ -6,6 +6,7 @@ import Price from '../../components/Price'
 import Button from '../../components/Button'
 import Features from '../../components/Features'
 import Poster from '../../components/Poster'
+import Counter from '../../components/Counter'
 
 const Product = () => {
   return (
@@ -40,11 +41,7 @@ const Product = () => {
           </div>
           <div className='flex items-center justify-between my-10'>
             <Price price='20' />
-            <div className='flex font-krona items-center gap-3 shadow-lg p-2 rounded-lg'>
-              <AiOutlineMinus className='cursor-pointer' />
-              <span>1</span>
-              <AiOutlinePlus className='cursor-pointer' />
-            </div>
+            <Counter />
             <Button title='add to basket' />
           </div>
           <div>

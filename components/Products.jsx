@@ -15,14 +15,6 @@ export const getStaticProps = async () => {
 }
 
 const Products = ({ products }) => {
-  // const [products, setProducts] = useState([])
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       'https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Vegan&product_type=blush'
-  //     )
-  //     .then(res => setProducts(res.data))
-  // }, [])
   console.log(products)
 
   return (

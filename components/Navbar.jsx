@@ -20,7 +20,7 @@ const Navbar = () => {
           <AiFillHeart className='text-xl cursor-pointer' />
         </Link>
 
-        <Link href='/'>
+        <Link href='/cart'>
           <BsHandbag className='text-xl cursor-pointer' />
         </Link>
       </div>

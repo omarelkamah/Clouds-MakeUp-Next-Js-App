@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Gift = () => {
   return (
-    <div className='w-[70%] mx-auto mr-11 my-16 p-5 gap-5 bg-backYellow flex'>
+    <div className='w-[70%] mx-auto mr-11 my-16 px-4 py-12 gap-5 bg-backYellow flex'>
       <div className='relative'>
         <div className='absolute -left-16'>
           <Image
@@ -29,7 +29,7 @@ const Gift = () => {
         <input
           type='email'
           placeholder='Your email'
-          className='block mb-8 p-3 py-2 outline-none bg-transparent border-b-[1px] w-full border-backDark'
+          className='inline-block mb-8 p-3 py-2 outline-none bg-transparent border-b-[1px] w-full border-backDark'
         />
         <Button
           title='subscribe'
