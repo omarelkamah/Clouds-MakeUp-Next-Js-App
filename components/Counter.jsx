@@ -3,9 +3,9 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 
 const Counter = () => {
   return (
-    <div className='flex font-krona items-center gap-3 shadow-lg p-2 rounded-lg'>
+    <div className='flex font-krona items-center gap-6 shadow-lg p-4 font-bold rounded-lg'>
       <AiOutlineMinus className='cursor-pointer' />
-      <span>1</span>
+      <span>0</span>
       <AiOutlinePlus className='cursor-pointer' />
     </div>
   )
