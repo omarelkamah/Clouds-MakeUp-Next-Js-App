@@ -27,7 +27,7 @@ const Features = () => {
     }
   ]
   return (
-    <div className='container mx-auto flex justify-between my-5'>
+    <div className='container mx-auto my-10 flex justify-between'>
       {features.map(feature => (
         <div key={feature.id} className='flex gap-4'>
           <div className='flex '>

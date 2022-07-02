@@ -5,17 +5,10 @@ import Link from 'next/link'
 
 const Product = ({ id, name, price, image }) => {
   return (
-    <Link href={`/products/${id}`}>
+    <Link href={`/product/${id}`}>
       <div className='flex w-[250px] flex-col align-center cursor-pointer rounded-md mb-6 mr-6 px-4 py-6 transform hover:scale-105 hover:shadow-xl transition delay-50 duration-300 ease-in-out'>
         <div className='h-40 relative'>
-          <Image
-            src={image}
-            layout='fill'
-            objectFit='cover'
-            // width='50px'
-            // height='50px'
-            alt='Product'
-          />
+          <Image src={image} layout='fill' objectFit='cover' alt='Product' />
         </div>
         <div className='flex flex-col'>
           <Link href={``}>
@@ -29,4 +22,4 @@ const Product = ({ id, name, price, image }) => {
   )
 }
 
-export default Product
+export default React.memo(Product)
