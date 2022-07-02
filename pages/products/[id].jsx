@@ -1,14 +1,40 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { AiFillHeart, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
+import { AiFillHeart } from 'react-icons/ai'
 import Price from '../../components/Price'
 import Button from '../../components/Button'
 import Features from '../../components/Features'
 import Poster from '../../components/Poster'
 import Counter from '../../components/Counter'
 
-const Product = () => {
+export const getStaticPaths = async () => {
+  const res = await fetch(
+    'http://makeup-api.herokuapp.com/api/v1/products.json'
+  )
+  const products = await res.json()
+
+  const paths = products.map(product => {
+    return {
+      params: { id: product.id.toString() }
+    }
+  })
+
+  return { paths, fallback: false }
+}
+
+export const getStaticProps = async context => {
+  const id = context.params.id
+  const res = await fetch(
+    `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`
+  )
+  const product = await res.json()
+
+  return { props: { product } }
+}
+
+const Product = ({ product }) => {
+  console.log(product)
   return (
     <div className='container mx-auto my-5'>
       <div>

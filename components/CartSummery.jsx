@@ -4,7 +4,7 @@ import Button from './Button'
 const CartSummery = () => {
   return (
     <div className='flex-1'>
-      <h3 className='font-krona mb-3 text-center text-lg'>ORDER SUMMARY</h3>
+      <h3 className='font-krona mb-6 text-center text-lg'>ORDER SUMMARY</h3>
       <div className='flex justify-between mb-5'>
         <p className='font-base'>Subtotal</p>
         <p>$ 10</p>

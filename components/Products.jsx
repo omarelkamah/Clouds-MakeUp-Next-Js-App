@@ -3,17 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Heading from './Heading'
 import Product from './Product'
 
-export const getStaticProps = async () => {
-  const res = await fetch(
-    'https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Vegan&product_type=blush'
-  )
-  const data = await res.json()
-
-  return {
-    props: { products: data.data }
-  }
-}
-
 const Products = ({ products }) => {
   console.log(products)
 
@@ -21,7 +10,7 @@ const Products = ({ products }) => {
     <div className='container mx-auto my-5'>
       <Heading title='Clean beauty' />
       <div className='flex flex-wrap justify-center'>
-        {/* {products.map(product => (
+        {products.map(product => (
           <Product
             key={product.id}
             id={product.id}
@@ -29,7 +18,7 @@ const Products = ({ products }) => {
             image={product.image_link}
             price={product.price}
           />
-        ))} */}
+        ))}
       </div>
     </div>
   )
