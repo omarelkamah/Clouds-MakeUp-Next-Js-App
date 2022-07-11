@@ -5,8 +5,8 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 const AboutStatics = () => {
   return (
-    <div className='  bg-backYellow py-16 mt-10'>
-      <div className='container text-center mx-auto flex items-center gap-8'>
+    <div className='bg-backYellow py-16 mt-10'>
+      <div className='container text-center mx-auto flex flex-col sm:flex-row items-center justify-center gap-8'>
         <div className='flex flex-col justify-center items-center'>
           <BsPeople className='font-bold text-6xl mb-3' />
           <h3 className='font-krona text-lg'>

@@ -5,27 +5,27 @@ import Header from "../components/Header";
 import Poster from "../components/Poster";
 import Products from "../components/Products";
 
-export const getStaticProps = async () => {
-  const res = await fetch(
-    "https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Vegan&product_type=blush"
-  );
-  // const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data = await res.json();
+// export const getStaticProps = async (co) => {
+//   const res = await fetch(
+//     "https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Vegan&product_type=blush"
+//   );
+//   const data = await res.json();
 
-  return {
-    props: { products: data },
-  };
-};
+//   // console.log(co);
+//   return {
+//     props: { products: data },
+//   };
+// };
 
 export default function Home({ products }) {
   return (
     <div>
       <Header />
-      <Products products={products} />
+      {/* <Products products={products} /> */}
       <Poster />
       <About />
       <Features />
-      <Gift />
+      {/* <Gift /> */}
     </div>
   );
 }

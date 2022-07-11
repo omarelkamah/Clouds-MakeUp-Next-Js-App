@@ -34,7 +34,8 @@ export const getStaticProps = async context => {
 }
 
 const Product = ({ product }) => {
-  console.log(product)
+  // get products with same category
+
   return (
     <div className='container mx-auto my-5'>
       <Poster bottom='0' />
@@ -65,7 +66,7 @@ const Product = ({ product }) => {
           <div className='flex items-center justify-between my-10'>
             <Price price={product.price} />
             <Counter />
-            <Button title='add to basket' />
+            <Button title='add to basket' link='/cart' />
           </div>
           <div>
             <h5 className='font-krona text-backDark mb-2'>description</h5>

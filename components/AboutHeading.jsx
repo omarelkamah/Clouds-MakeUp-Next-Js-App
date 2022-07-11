@@ -10,7 +10,7 @@ const AboutHeading = () => {
           <a className='font-krona font-bold text-4xl -ml-5'>Clouds</a>
         </Link>
       </div>
-      <div className='mx-auto w-2/3'>
+      <div className='mx-auto px-5 text-center sm:text-left sm:w-2/3'>
         <p className='font-base mt-4 leading-7 mb-4'>
           Clouds is the leading premium beauty platform in Europe. Offering more
           than 130,000 beauty and lifestyle products in online shops, the beauty

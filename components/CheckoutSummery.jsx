@@ -1,8 +1,6 @@
-import Link from 'next/link'
 import React from 'react'
-import Button from './Button'
 
-const CartSummery = () => {
+const CheckoutSummery = () => {
   return (
     <div className='flex-1'>
       <h3 className='font-krona mb-6 text-center text-lg'>ORDER SUMMARY</h3>
@@ -22,11 +20,8 @@ const CartSummery = () => {
         <p className=''>Total</p>
         <p>$ 261.830</p>
       </div>
-      <div className='flex justify-center'>
-        <Button title='check out' link='/checkout' />
-      </div>
     </div>
   )
 }
 
-export default CartSummery
+export default CheckoutSummery

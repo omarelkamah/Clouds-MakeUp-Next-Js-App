@@ -4,8 +4,8 @@ import { AiFillHeart } from 'react-icons/ai'
 
 const Features = () => {
   return (
-    <div className='container mx-auto my-10 flex justify-between'>
-      <div className='flex gap-4'>
+    <div className='container mx-auto my-10 flex justify-between flex-col sm:flex-row'>
+      <div className='flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 my-5'>
         <div className='flex '>
           <span className='bg-backYellow w-7 h-7 rounded-[50%] block absolute -z-10'></span>
           <AiFillHeart className='text-4xl ml-3' />
@@ -18,7 +18,7 @@ const Features = () => {
           </p>
         </div>
       </div>
-      <div className='flex gap-4'>
+      <div className='flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 my-5'>
         <div className='flex '>
           <span className='bg-backYellow w-7 h-7 rounded-[50%] block absolute -z-10'></span>
           <AiFillHeart className='text-4xl ml-3' />
@@ -31,7 +31,7 @@ const Features = () => {
           </p>
         </div>
       </div>
-      <div className='flex gap-4'>
+      <div className='flex flex-col sm:flex-row gap-4 items-center sm:items-start text-center sm:text-left my-5'>
         <div className='flex '>
           <span className='bg-backYellow w-7 h-7 rounded-[50%] block absolute -z-10'></span>
           <AiFillHeart className='text-4xl ml-3' />

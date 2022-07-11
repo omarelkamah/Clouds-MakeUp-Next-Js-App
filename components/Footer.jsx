@@ -25,14 +25,14 @@ const Footer = () => {
     { id: 1, link: '/', title: 'base' },
     { id: 2, link: '/', title: 'contour' },
     { id: 3, link: '/', title: 'eye makeup' },
-    { id: 3, link: '/', title: 'lips' }
+    { id: 4, link: '/', title: 'lips' }
   ]
 
   const suppllements = [
     { id: 1, link: '/', title: 'hair and nails' },
     { id: 2, link: '/', title: 'vitamins' },
     { id: 3, link: '/', title: 'vitamins' },
-    { id: 3, link: '/', title: 'nutrients' }
+    { id: 4, link: '/', title: 'nutrients' }
   ]
 
   const categoryLinks = [
@@ -42,45 +42,45 @@ const Footer = () => {
   ]
 
   return (
-    <div className='flex justify-around py-8 mt-5 bg-backDark text-white'>
+    <div className='flex flex-col sm:flex-row justify-around py-8 mt-5 bg-backDark text-white'>
       <BrandLogo color='true' />
-      <div className='flex flex-col gap-1'>
-        <h3 className='text-white font-krona mb-1'>about</h3>
+      <div className='flex flex-col gap-1 mb-8'>
+        <h3 className='text-backYellow font-krona mb-1'>about</h3>
         {aboutLinks.map(link => (
           <Link key={link.id} href={link.link}>
-            {link.title}
+            <a className='hover:text-backYellow font-base'>{link.title}</a>
           </Link>
         ))}
       </div>
       <div className='flex flex-col gap-1'>
-        <h3 className='text-white font-krona mb-1'>skincare</h3>
+        <h3 className='text-backYellow font-krona mb-1'>skincare</h3>
         {skincare.map(link => (
           <Link key={link.id} href={link.link}>
-            {link.title}
+            <a className='hover:text-backYellow font-base'>{link.title}</a>
           </Link>
         ))}
       </div>
-      <div className='flex flex-col gap-1'>
-        <h3 className='text-white font-krona mb-1'>makeup</h3>
+      <div className='flex flex-col gap-1 mb-8'>
+        <h3 className='text-backYellow font-krona mb-1'>makeup</h3>
         {makeup.map(link => (
           <Link key={link.id} href={link.link}>
-            {link.title}
+            <a className='hover:text-backYellow font-base'>{link.title}</a>
           </Link>
         ))}
       </div>
-      <div className='flex flex-col gap-1'>
-        <h3 className='text-white font-krona mb-1'>suppllements</h3>
+      <div className='flex flex-col gap-1 mb-8'>
+        <h3 className='text-backYellow font-krona mb-1'>suppllements</h3>
         {suppllements.map(link => (
           <Link key={link.id} href={link.link}>
-            {link.title}
+            <a className='hover:text-backYellow font-base'>{link.title}</a>
           </Link>
         ))}
       </div>
-      <div className='flex flex-col gap-1'>
-        <h3 className='text-white font-krona mb-1'>luxury</h3>
+      <div className='flex flex-col gap-1 mb-8'>
+        <h3 className='text-backYellow font-krona mb-1'>luxury</h3>
         {categoryLinks.map(link => (
           <Link key={link.id} href={link.link}>
-            {link.title}
+            <a className='hover:text-backYellow font-base'>{link.title}</a>
           </Link>
         ))}
       </div>

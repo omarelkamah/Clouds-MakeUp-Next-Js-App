@@ -5,6 +5,8 @@ const CartItems = () => {
   return (
     <div className='flex-2'>
       <CartProduct />
+      <CartProduct />
+      <CartProduct />
     </div>
   )
 }

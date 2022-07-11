@@ -16,12 +16,27 @@ const Navbar = () => {
           <Link href='/search'>search</Link>
           <Link href='/about'>about</Link>
         </div>
-        <Link href='/'>
-          <AiFillHeart className='text-xl cursor-pointer' />
+        <Link href='/wishlist'>
+          <div className='relative'>
+            <span
+              className='absolute flex items-center justify-center w-6 h-6 rounded-full bg-backYellow'
+              style={{ top: '-12px', right: '-15px' }}
+            >
+              0
+            </span>
+            <AiFillHeart className='text-xl cursor-pointer' />
+          </div>
         </Link>
-
         <Link href='/cart'>
-          <BsHandbag className='text-xl cursor-pointer' />
+          <div className='relative'>
+            <span
+              className='absolute flex items-center justify-center w-6 h-6 rounded-full bg-backYellow'
+              style={{ top: '-12px', right: '-15px' }}
+            >
+              0
+            </span>
+            <BsHandbag className='text-xl cursor-pointer' />
+          </div>
         </Link>
       </div>
     </div>

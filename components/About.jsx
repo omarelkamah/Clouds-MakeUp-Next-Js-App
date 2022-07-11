@@ -4,15 +4,18 @@ import Image from 'next/image'
 const About = () => {
   return (
     <div className='bg-[#f8f8f8]'>
-      <div className='container mx-auto flex items-center gap-4 pt-[200px] pb-9 my-7 '>
-        <div className='relative flex-1 h-[60vh]'>
+      <div className='container mx-auto flex flex-col md:flex-row items-center gap-4 pt-[200px] pb-9 my-7 '>
+        <div className='relative flex-1 h-screen'>
           <Image
             src='/images/about.jpg'
             alt='About'
+            layout='responsive'
             objectFit='cover'
-            layout='fill'
-            width='100'
-            height='100'
+            width='100%'
+            height='100%'
+
+            // width='100'
+            // height='100'
           />
         </div>
         <div className=' text-backGray flex-1 font-base'>

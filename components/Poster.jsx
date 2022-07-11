@@ -6,7 +6,7 @@ import Price from './Price'
 const Poster = ({ bottom }) => {
   return (
     <div
-      className={`container mx-auto flex items-center justify-between flex-wrap relative 
+      className={`container mx-auto flex flex-col sm:flex-row items-center justify-between flex-wrap relative 
                   ${
                     bottom ? 'bottom-0' : '-bottom-48'
                   } bg-backLightDark text-white py-8 px-20`}
@@ -15,9 +15,14 @@ const Poster = ({ bottom }) => {
         <h3 className='font-krona text-lg mb-4'>
           Be natural, <br /> be beautiful <br /> be you
         </h3>
-        <Button title='see more' bgColor='bg-backDark' textColor='text-white' />
+        <Button
+          title='see more'
+          link='/about'
+          bgColor='bg-backDark'
+          textColor='text-white'
+        />
       </div>
-      <div className=' flex'>
+      <div className=' flex mt-8'>
         <Image
           src='/images/banner.png'
           width='200px'
