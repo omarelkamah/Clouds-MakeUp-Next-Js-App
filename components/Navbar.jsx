@@ -49,18 +49,24 @@ const Navbar = () => {
           onClick={() => setShowMenue(false)}
         />
         <div className='text-xs flex flex-col items-center justify-center gap-8'>
-          <Link href='/'>home</Link>
-          <Link href='/search'>search</Link>
-          <Link href='/about'>about</Link>
+          <Link href='/' onClick={() => setShowMenue(false)}>
+            home
+          </Link>
+          <Link href='/search' onClick={() => setShowMenue(false)}>
+            search
+          </Link>
+          <Link href='/about' onClick={() => setShowMenue(false)}>
+            about
+          </Link>
         </div>
         <Link href='/wishlist'>
-          <div className='relative'>
+          <div className='relative' onClick={() => setShowMenue(false)}>
             <AmountNumber amount='10' />
             <AiFillHeart className='text-xl cursor-pointer' />
           </div>
         </Link>
         <Link href='/cart'>
-          <div className='relative'>
+          <div className='relative' onClick={() => setShowMenue(false)}>
             <AmountNumber amount='3' />
             <BsHandbag className='text-xl cursor-pointer' />
           </div>
