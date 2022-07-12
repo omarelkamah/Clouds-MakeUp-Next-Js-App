@@ -7,11 +7,13 @@ import AmountNumber from './AmountNumber'
 
 const Navbar = () => {
   //TODO: change Icons in navbar
-  const [showMenue, setShowMenue] = useState(true)
+  //TODO: Make main manue show in desktop
+
+  const [showMenue, setShowMenue] = useState(false)
   return (
     <div className='container mx-auto flex justify-between items-center p-4 px-8 font-krona font-bold'>
       <BrandLogo />
-      {/* <div className=' sm:flex items-center gap-4'>
+      <div className='hidden sm:flex items-center gap-4'>
         <div className='text-xs flex gap-8'>
           <Link href='/' className=''>
             home
@@ -31,15 +33,19 @@ const Navbar = () => {
             <BsHandbag className='text-xl cursor-pointer' />
           </div>
         </Link>
-      </div> */}
-      <AiFillHeart onClick={() => setShowMenue(true)} />
+      </div>
+
+      <AiFillHeart
+        className='cursor-pointer block sm:hidden text-2xl'
+        onClick={() => setShowMenue(true)}
+      />
       <div
         className={`fixed ${
           showMenue ? 'right-0' : '-right-[100%]'
         }  top-0 w-[60%] transition-all h-screen z-10 flex flex-col items-center justify-center bg-white gap-8`}
       >
         <AiFillHeart
-          className='absolute top-8 right-8 text-xl'
+          className='absolute top-8 right-8 text-xl cursor-pointer'
           onClick={() => setShowMenue(false)}
         />
         <div className='text-xs flex flex-col items-center justify-center gap-8'>
