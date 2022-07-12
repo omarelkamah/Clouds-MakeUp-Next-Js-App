@@ -4,7 +4,7 @@ import Counter from './Counter'
 
 const CartProduct = () => {
   return (
-    <div className='flex flex-wrap items-center justify-around gap-3 mb-6 hover:shadow-lg transition-all'>
+    <div className='flex flex-col sm:flex-row  flex-wrap items-center justify-around gap-3 mb-6 hover:shadow-lg transition-all py-4'>
       <div className='relative'>
         <Image
           src='/images/banner.png'
@@ -16,7 +16,7 @@ const CartProduct = () => {
       </div>
       <div>
         <h3 className='font-krona mb-3'>
-          Product:{' '}
+          Product:
           <span className='text-sm text-backLightDark'>mens cotton jacket</span>
         </h3>
         <p className='font-krona mb-3'>
