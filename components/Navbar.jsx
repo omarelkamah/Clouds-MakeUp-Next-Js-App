@@ -49,14 +49,14 @@ const Navbar = () => {
           onClick={() => setShowMenue(false)}
         />
         <div className='text-xs flex flex-col items-center justify-center gap-8'>
-          <Link href='/' onClick={() => setShowMenue(false)}>
-            home
+          <Link href='/'>
+            <a onClick={() => setShowMenue(false)}>home</a>
           </Link>
-          <Link href='/search' onClick={() => setShowMenue(false)}>
-            search
+          <Link href='/search'>
+            <a onClick={() => setShowMenue(false)}>search</a>
           </Link>
-          <Link href='/about' onClick={() => setShowMenue(false)}>
-            about
+          <Link href='/about'>
+            <a onClick={() => setShowMenue(false)}>about</a>
           </Link>
         </div>
         <Link href='/wishlist'>
