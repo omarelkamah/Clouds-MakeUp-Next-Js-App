@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../components/Button'
 import CartProduct from '../../components/CartProduct'
 import CheckoutSummery from '../../components/CheckoutSummery'
 
@@ -38,7 +39,7 @@ const index = () => {
   ]
 
   return (
-    <div className='container mx-auto flex gap-6 my-10'>
+    <div className='container mx-auto flex flex-col lg:flex-row gap-6 my-10 p-3'>
       <form action='post' className='flex-1'>
         {inputs.map(input => (
           <div key={input.id} className='flex flex-col mb-6'>
@@ -51,12 +52,7 @@ const index = () => {
             />
           </div>
         ))}
-        <button
-          type='submit'
-          className='bg-backYellow text-backDark w-fit p-2 py-4 px-8 rounded-full font-bold text-sm font-krona  block cursor-pointer'
-        >
-          submit
-        </button>
+        <Button title='submit' type='submit' />
       </form>
       <div>
         <CheckoutSummery />
