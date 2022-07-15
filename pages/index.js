@@ -21,11 +21,11 @@ export default function Home({ products }) {
   return (
     <div>
       <Header />
-      {/* <Products products={products} /> */}
+      <Products products={products} />
       <Poster />
       <About />
       <Features />
-      {/* <Gift /> */}
+      <Gift />
     </div>
   );
 }

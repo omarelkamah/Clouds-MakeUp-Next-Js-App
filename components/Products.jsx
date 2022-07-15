@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Heading from './Heading'
+import Loader from './Loader'
 import Product from './Product'
 
 const Products = ({ products }) => {
@@ -10,15 +11,19 @@ const Products = ({ products }) => {
     <div className='container mx-auto my-5'>
       <Heading title='Clean beauty' />
       <div className='flex flex-wrap justify-center'>
-        {products.map(product => (
-          <Product
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            image={product.image_link}
-            price={product.price}
-          />
-        ))}
+        {products ? (
+          products.map(product => (
+            <Product
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              image={product.image_link}
+              price={product.price}
+            />
+          ))
+        ) : (
+          <Loader />
+        )}
       </div>
     </div>
   )
