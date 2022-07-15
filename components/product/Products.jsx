@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import Heading from './Heading'
-import Loader from './Loader'
+import Heading from '../ui/Heading'
+import Loader from '../ui/Loader'
 import Product from './Product'
 
 const Products = ({ products }) => {

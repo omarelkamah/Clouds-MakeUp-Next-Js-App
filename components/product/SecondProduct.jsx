@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import Counter from './Counter'
+import Counter from '../ui/Counter'
 
-const CartProduct = () => {
+const SecondProduct = () => {
   return (
     <div className='flex flex-col sm:flex-row  flex-wrap items-center justify-around gap-3 mb-6 hover:shadow-lg transition-all py-4'>
       <div className='relative'>
@@ -33,4 +33,4 @@ const CartProduct = () => {
   )
 }
 
-export default CartProduct
+export default SecondProduct

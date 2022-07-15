@@ -1,9 +1,9 @@
 import About from "../components/About";
-import Features from "../components/Features";
-import Gift from "../components/Gift";
-import Header from "../components/Header";
-import Poster from "../components/Poster";
-import Products from "../components/Products";
+import Features from "../components/ui/Features";
+import Gift from "../components/home/Gift";
+import Header from "../components/home/Header";
+import Poster from "../components/ui/Poster";
+import Products from "../components/product/Products";
 
 // export const getStaticProps = async (co) => {
 //   const res = await fetch(

@@ -1,7 +1,6 @@
 import React from 'react'
-import Poster from '../../components/Poster'
-import Product from '../../components/Product'
-import SearchProducts from '../../components/SearchProducts'
+import Poster from '../../components/ui/Poster'
+import SearchProducts from '../../components/product/SearchProducts'
 import SearchSidebar from '../../components/SearchSidebar'
 
 // export const getStaticProps = async () => {

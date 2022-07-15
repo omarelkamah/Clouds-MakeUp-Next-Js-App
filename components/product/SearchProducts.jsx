@@ -1,6 +1,6 @@
 import React from 'react'
 import Product from './Product'
-import Loader from '../components/Loader'
+import Loader from '../ui/Loader'
 
 const SearchProducts = ({ products }) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from '../../components/Button'
-import CartProduct from '../../components/CartProduct'
-import CheckoutSummery from '../../components/CheckoutSummery'
+import Button from '../../components/ui/Button'
+import SecondProduct from '../../components/product/SecondProduct'
+import CheckoutSummery from '../../components/checkout/CheckoutSummery'
 
 const index = () => {
   const inputs = [
@@ -39,7 +39,7 @@ const index = () => {
   ]
 
   return (
-    <div className='container mx-auto flex flex-col lg:flex-row gap-6 my-10 p-3'>
+    <div className='container mx-auto flex flex-col-reverse lg:flex-row gap-6 my-10 p-3'>
       <form action='post' className='flex-1'>
         {inputs.map(input => (
           <div key={input.id} className='flex flex-col mb-6'>
@@ -60,12 +60,12 @@ const index = () => {
           ORDER ITEMS
         </h3>
 
-        <CartProduct />
-        <CartProduct />
-        <CartProduct />
-        <CartProduct />
-        <CartProduct />
-        <CartProduct />
+        <SecondProduct />
+        <SecondProduct />
+        <SecondProduct />
+        <SecondProduct />
+        <SecondProduct />
+        <SecondProduct />
       </div>
     </div>
   )

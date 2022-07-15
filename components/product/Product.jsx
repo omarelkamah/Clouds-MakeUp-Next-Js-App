@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Price from './Price'
+import Price from '../ui/Price'
 import Link from 'next/link'
 
 const Product = ({ id, name, price, image }) => {

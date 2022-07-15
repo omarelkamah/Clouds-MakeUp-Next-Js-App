@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { AiFillHeart } from 'react-icons/ai'
 import { BsHandbag } from 'react-icons/bs'
-import BrandLogo from './BrandLogo'
-import AmountNumber from './AmountNumber'
+import BrandLogo from '../ui/BrandLogo'
+import AmountNumber from '../AmountNumber'
 
 const Navbar = () => {
   //TODO: change Icons in navbar

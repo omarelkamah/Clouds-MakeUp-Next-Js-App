@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import BrandLogo from './BrandLogo'
+import BrandLogo from '../ui/BrandLogo'
 import { FaFacebookF } from 'react-icons/fa'
 import { AiOutlineTwitter, AiFillInstagram } from 'react-icons/ai'
 

@@ -20,6 +20,9 @@ module.exports = {
       flex: {
         2: "2 2 0%",
       },
+      // container: {
+      //   padding: "1rem",
+      // },
     },
   },
   plugins: [],

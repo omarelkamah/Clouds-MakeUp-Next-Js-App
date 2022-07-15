@@ -6,7 +6,7 @@ import Price from '../../components/Price'
 import Button from '../../components/Button'
 import Features from '../../components/Features'
 import Poster from '../../components/Poster'
-import Counter from '../../components/Counter'
+import Counter from '../../components/ui/Counter'
 
 export const getStaticPaths = async () => {
   const res = await fetch(

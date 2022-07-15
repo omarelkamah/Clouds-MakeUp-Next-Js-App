@@ -1,6 +1,6 @@
 import React from 'react'
-import AboutHeading from '../../components/AboutHeading'
-import AboutStatics from '../../components/AboutStatics'
+import AboutHeading from '../../components/about/AboutHeading'
+import AboutStatics from '../../components/about/AboutStatics'
 
 const index = () => {
   return (
