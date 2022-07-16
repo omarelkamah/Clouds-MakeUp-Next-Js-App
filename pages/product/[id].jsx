@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AiFillHeart } from 'react-icons/ai'
@@ -7,6 +7,8 @@ import Button from '../../components/ui/Button'
 import Features from '../../components/ui/Features'
 import Poster from '../../components/ui/Poster'
 import Counter from '../../components/ui/Counter'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart, removeFromCart } from '../../store/slice/cartItems'
 
 export const getStaticPaths = async () => {
   const res = await fetch(
@@ -30,11 +32,26 @@ export const getStaticProps = async context => {
   )
   const product = await res.json()
 
-  return { props: { product } }
+  return { props: { product, id } }
 }
 
-const Product = ({ product }) => {
+const Product = ({ product, id }) => {
   // get products with same category
+  const { items } = useSelector(state => state.cart)
+  const dispatch = useDispatch()
+
+  let amount = 0
+  const getAmount = () => {
+    const filteredItems = items.filter(item => item.id == id)
+
+    filteredItems.map(item => (amount += item.qty))
+    console.log(amount)
+    // return filteredItems
+  }
+
+  getAmount()
+  // console.log(id)
+  // console.log(product.qty)
 
   return (
     <div className='container mx-auto my-5'>
@@ -65,8 +82,24 @@ const Product = ({ product }) => {
           </div>
           <div className='flex items-center justify-between my-10'>
             <Price price={product.price} />
-            <Counter />
-            <Button title='add to basket' link='/cart' />
+            <Counter
+              count={amount}
+              increment={() => {
+                dispatch(addToCart(product))
+                getAmount()
+              }}
+              decrement={() => {
+                dispatch(removeFromCart(product))
+                getAmount()
+              }}
+            />
+            <Button
+              title='add to basket'
+              onClick={() => {
+                dispatch(addToCart(product))
+                getAmount()
+              }}
+            />
           </div>
           <div>
             <h5 className='font-krona text-backDark mb-2'>description</h5>
@@ -83,4 +116,4 @@ const Product = ({ product }) => {
   )
 }
 
-export default memo(Product)
+export default Product
