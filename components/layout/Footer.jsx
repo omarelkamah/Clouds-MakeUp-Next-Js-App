@@ -44,7 +44,7 @@ const Footer = () => {
   return (
     <div className='flex flex-col sm:flex-row justify-around px-3 py-8 bg-backDark text-white'>
       <BrandLogo color='true' />
-      <div className='flex flex-col gap-1 mb-8'>
+      <div className='flex flex-col gap-1 mb-8 mt-8 sm:mt-0'>
         <h3 className='text-backYellow font-krona mb-1'>about</h3>
         {aboutLinks.map(link => (
           <Link key={link.id} href={link.link}>

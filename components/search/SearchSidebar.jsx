@@ -5,7 +5,7 @@ import SearchSidebarLinks from './SearchSidebarLinks'
 
 const SearchSidebar = () => {
   return (
-    <div className='w-fit'>
+    <div className='sm:w-fit'>
       <SearchPrice />
       <SearchSelectMenue />
       <SearchSidebarLinks />

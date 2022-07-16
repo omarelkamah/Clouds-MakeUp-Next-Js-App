@@ -22,7 +22,7 @@ const index = ({ products }) => {
   return (
     <div className='container mx-auto'>
       <Poster bottom='0' />
-      <div className='mt-5 flex'>
+      <div className='mt-5 flex flex-col sm:flex-row'>
         <SearchSidebar />
         <SearchProducts products={products} />
       </div>

@@ -4,7 +4,7 @@ import Loader from '../ui/Loader'
 
 const SearchProducts = ({ products }) => {
   return (
-    <div className='flex flex-wrap  flex-1 justify-center'>
+    <div className='flex flex-wrap mb-16 flex-1 justify-center'>
       {products ? (
         products.map(product => (
           <Product
