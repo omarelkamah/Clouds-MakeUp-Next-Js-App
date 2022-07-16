@@ -4,19 +4,19 @@ import Image from 'next/image'
 
 const Gift = () => {
   return (
-    <div className='lg:w-[70%] p-3 mx-auto lg:mr-11 mt-16 px-4 py-12 gap-5 bg-backYellow flex flex-col md:flex-row items-center justify-center'>
-      <div className='relative'>
-        <div className='absolute -left-16'>
+    <div className='p-3 mt-16 px-4 py-16 gap-5 bg-backYellow flex flex-col md:flex-row items-center justify-center'>
+      <div className='relative flex-1 flex justify-center items-center'>
+        <div className='absolute'>
           <Image
             src='/images/product.png'
             alt='gift'
-            width='250'
-            height='250'
+            width='300'
+            height='300'
           />
         </div>
-        <div className='w-[250px] h-[250px] rounded-[50%] bg-white' />
+        <div className='w-[250px] h-[250px] rounded-full bg-white' />
       </div>
-      <div>
+      <div className='flex-1 flex flex-col items-center md:items-start'>
         <h3 className='font-krona font-bold mb-3'>
           We have something for you!
         </h3>
