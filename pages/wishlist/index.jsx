@@ -11,6 +11,11 @@ const index = () => {
       <WishListProduct />
       <WishListProduct />
       <WishListProduct />
+      <WishListProduct />
+      <WishListProduct />
+      <WishListProduct />
+      <WishListProduct />
+      <WishListProduct />
     </div>
   )
 }
