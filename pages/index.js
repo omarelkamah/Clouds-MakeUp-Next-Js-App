@@ -1,4 +1,4 @@
-import About from "../components/About";
+import About from "../components/home/About";
 import Features from "../components/ui/Features";
 import Gift from "../components/home/Gift";
 import Header from "../components/home/Header";

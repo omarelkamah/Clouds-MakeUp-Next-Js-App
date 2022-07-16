@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import WishListProduct from '../../components/WishListProduct'
+import WishListProduct from '../../components/product/WishListProduct'
 
 const index = () => {
   return (

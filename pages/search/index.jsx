@@ -1,7 +1,7 @@
 import React from 'react'
 import Poster from '../../components/ui/Poster'
 import SearchProducts from '../../components/product/SearchProducts'
-import SearchSidebar from '../../components/SearchSidebar'
+import SearchSidebar from '../../components/search/SearchSidebar'
 
 // export const getStaticProps = async () => {
 //   const res = await fetch(
