@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Gift = () => {
   return (
-    <div className='lg:w-[70%] p-3 mx-auto lg:mr-11 my-16 px-4 py-12 gap-5 bg-backYellow flex flex-col md:flex-row items-center justify-center'>
+    <div className='lg:w-[70%] p-3 mx-auto lg:mr-11 mt-16 px-4 py-12 gap-5 bg-backYellow flex flex-col md:flex-row items-center justify-center'>
       <div className='relative'>
         <div className='absolute -left-16'>
           <Image

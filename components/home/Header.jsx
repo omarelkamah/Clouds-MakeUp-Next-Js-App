@@ -5,7 +5,7 @@ import Button from '../ui/Button'
 
 const Header = () => {
   return (
-    <div className='container mx-auto md:flex justify-center items-center my-10 h-screen'>
+    <div className='container mx-auto md:flex justify-center items-center my-10 h-full md:h-screen'>
       <div className='flex flex-col items-center md:items-start justify-center mx-auto flex-1 text-center sm:text-left'>
         <h1 className='font-krona font-bold text-5xl leading-snug  mb-3'>
           The Makeup e-commerce project
