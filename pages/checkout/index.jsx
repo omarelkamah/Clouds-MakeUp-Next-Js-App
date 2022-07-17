@@ -2,8 +2,16 @@ import React from 'react'
 import Button from '../../components/ui/Button'
 import SecondProduct from '../../components/product/SecondProduct'
 import CheckoutSummery from '../../components/checkout/CheckoutSummery'
+import { useSelector } from 'react-redux'
 
 const index = () => {
+  const { items } = useSelector(state => state.cart)
+
+  const totalPrice = items.reduce(
+    (totalPrice, product) => totalPrice + +product.price * product.qty,
+    0
+  )
+
   const inputs = [
     {
       id: 1,
@@ -55,17 +63,25 @@ const index = () => {
         <Button title='submit' type='submit' />
       </form>
       <div>
-        <CheckoutSummery />
+        <CheckoutSummery totalPrice={totalPrice} />
         <h3 className='font-krona text-center text-lg my-4 mt-10'>
           ORDER ITEMS
         </h3>
+        {items.length === 0 && (
+          <p className='font-krona text-sm mt-4'>empty items !</p>
+        )}
 
-        <SecondProduct />
-        <SecondProduct />
-        <SecondProduct />
-        <SecondProduct />
-        <SecondProduct />
-        <SecondProduct />
+        {items.map(product => (
+          <SecondProduct
+            key={product.id}
+            product={product}
+            name={product.name}
+            image={product.image_link}
+            price={product.price}
+            category={product.category}
+            count={product.qty}
+          />
+        ))}
       </div>
     </div>
   )
