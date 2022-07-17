@@ -1,13 +1,18 @@
 import React from 'react'
 import Image from 'next/image'
 import Button from '../ui/Button'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../store/slice/cartItems'
+import { removeFromWishList } from '../../store/slice/wishItems'
 
-const WishListProduct = () => {
+const WishListProduct = ({ product, name, image, price, category }) => {
+  const dispatch = useDispatch()
+
   return (
     <div className='flex flex-col sm:flex-row flex-wrap items-center justify-around gap-3 mb-6 hover:shadow-lg transition-all py-4'>
       <div className='relative'>
         <Image
-          src='/images/banner.png'
+          src={image}
           alt='product'
           layout=''
           width='200px'
@@ -17,21 +22,26 @@ const WishListProduct = () => {
       <div>
         <h3 className='font-krona mb-3'>
           Product:
-          <span className='text-sm text-backLightDark'>mens cotton jacket</span>
+          <span className='text-sm text-backLightDark'> {name}</span>
         </h3>
         <p className='font-krona mb-3'>
-          ID:<span className='text-sm text-backLightDark'> 5 </span>
+          price:<span className='text-sm text-backLightDark'> {price}</span>
         </p>
         <p className='font-krona'>
-          CATEGORY:<span className='text-sm text-backLightDark'> makeup</span>
+          CATEGORY:
+          <span className='text-sm text-backLightDark'> {category}</span>
         </p>
       </div>
       <div className='w-fit flex flex-col items-center gap-4 sm:gap-8'>
-        <Button title='add to cart' />
+        <Button
+          title='add to cart'
+          onClick={() => dispatch(addToCart(product))}
+        />
         <Button
           title='remove from wishlist'
           bgColor='bg-backDark'
           textColor='text-white'
+          onClick={() => dispatch(removeFromWishList(product))}
         />
       </div>
     </div>

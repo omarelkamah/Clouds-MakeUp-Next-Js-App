@@ -9,6 +9,7 @@ import Poster from '../../components/ui/Poster'
 import Counter from '../../components/ui/Counter'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeFromCart } from '../../store/slice/cartItems'
+import { addToWishList, removeFromWishList } from '../../store/slice/wishItems'
 
 export const getStaticPaths = async () => {
   const res = await fetch(
@@ -50,8 +51,6 @@ const Product = ({ product, id }) => {
   }
 
   getAmount()
-  // console.log(id)
-  // console.log(product.qty)
 
   return (
     <div className='container mx-auto my-5'>
@@ -70,7 +69,10 @@ const Product = ({ product, id }) => {
           />
         </div>
         <div className='flex-1'>
-          <div className='text-backGray flex items-center gap-4 mb-5'>
+          <div
+            className='text-backGray flex items-center gap-4 mb-5 cursor-pointer'
+            onClick={() => dispatch(addToWishList(product))}
+          >
             <AiFillHeart className='text-xl' />
             add to favorites
           </div>
