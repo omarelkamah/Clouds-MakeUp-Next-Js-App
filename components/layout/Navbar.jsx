@@ -11,7 +11,7 @@ const Navbar = () => {
   //TODO: Make main manue show in desktop
   const [showMenue, setShowMenue] = useState(false)
   const { items } = useSelector(state => state.cart)
-  console.log(items)
+  const { wishItems } = useSelector(state => state.wish)
 
   return (
     <div className='container mx-auto flex justify-between items-center p-4 px-8 font-krona font-bold'>
@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
         <Link href='/wishlist'>
           <div className='relative'>
-            <AmountNumber amount='10' />
+            <AmountNumber amount={wishItems.length} />
             <AiFillHeart className='text-xl cursor-pointer' />
           </div>
         </Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
         <Link href='/wishlist'>
           <div className='relative' onClick={() => setShowMenue(false)}>
-            <AmountNumber amount='10' />
+            <AmountNumber amount={wishItems.length} />
             <AiFillHeart className='text-xl cursor-pointer' />
           </div>
         </Link>

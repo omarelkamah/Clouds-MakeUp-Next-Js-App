@@ -1,31 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { items: [] };
+const initialState = { wishItems: [] };
 
 const wishItems = createSlice({
   name: "wishItems",
   initialState,
   reducers: {
     addToWishList: (state, action) => {
-      const exist = state.items.find((x) => x.id === action.payload.id);
+      const exist = state.wishItems.find((x) => x.id === action.payload.id);
 
       if (exist) {
-        state.items = state.items.map((x) =>
+        state.wishItems = state.wishItems.map((x) =>
           x.id === action.payload.id ? { ...exist, qty: exist.qty + 1 } : x
         );
       } else {
-        state.items = [...state.items, { ...action.payload, qty: 1 }];
+        state.wishItems = [...state.wishItems, { ...action.payload, qty: 1 }];
       }
 
-      console.log(state.items);
+      console.log(state.wishItems);
     },
     removeFromWishList: (state, action) => {
-      const exist = state.items.find((x) => x.id === action.payload.id);
+      const exist = state.wishItems.find((x) => x.id === action.payload.id);
 
       if (exist.qty === 1) {
-        state.items = state.items.filter((x) => x.id !== action.payload.id);
+        state.wishItems = state.wishItems.filter(
+          (x) => x.id !== action.payload.id
+        );
       } else {
-        state.items = state.items.map((x) =>
+        state.wishItems = state.wishItems.map((x) =>
           x.id === action.payload.id ? { ...exist, qty: exist.qty - 1 } : x
         );
       }
