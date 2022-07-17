@@ -11,7 +11,7 @@ const CartSummery = ({ products }) => {
       <h3 className='font-krona mb-6 text-center text-lg'>ORDER SUMMARY</h3>
       <div className='flex justify-between mb-8'>
         <p className='font-base'>Subtotal</p>
-        <p>$ 10</p>
+        <p>$ 0</p>
       </div>
       <div className='flex justify-between mb-8'>
         <p className='font-base'>Estimated Shipping</p>
@@ -19,7 +19,7 @@ const CartSummery = ({ products }) => {
       </div>
       <div className='flex justify-between mb-8'>
         <p className='font-base'>Subtotal</p>
-        <p>$ 10</p>
+        <p>$ 0</p>
       </div>
       <div className='flex justify-between font-krona mb-8'>
         <p className=''>Total</p>

@@ -1,25 +1,58 @@
 import Image from "next/image";
 import React from "react";
-import { FaAccusoft } from "react-icons/fa";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { FcGoogle } from "react-icons/fc";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../store/slice/user";
 
 const index = () => {
-  // add OverLay
   // Make Sign in with Google
-  // Change Icon
+  const { data: session } = useSession();
+  const dispatch = useDispatch();
 
-  return (
-    <div>
-      <div>
-        <Image src="/images/about.jpg" layout="fill" objectFit="cover" />
+  session?.user && dispatch(setUser(session.user));
+
+  // console.log(session);
+
+  if (session) {
+    return (
+      <div
+        className="flex items-center gap-5 cursor-pointer rounded-full w-fit p-5 text-backLightDark bg-white font-krona shadow-lg"
+        onClick={() => {
+          signOut();
+          // dispatch(setUser(session.user));
+        }}
+      >
+        <FcGoogle className="text-xl" />
+        logout with Google account
       </div>
-      <div className="flex justify-center absolute z-10 centerItemsCustom">
-        <div className="flex items-center gap-5 cursor-pointer rounded-full w-fit p-5 text-backLightDark bg-white font-krona shadow-lg">
-          <FaAccusoft className="text-xl" />
-          login with Google account
+    );
+  } else {
+    return (
+      <div>
+        <div className="overlay" />
+        <div>
+          <Image
+            src="/images/about.jpg"
+            layout="fill"
+            objectFit="cover"
+            alt="background"
+          />
+        </div>
+        <div className="flex justify-center absolute z-10 centerItemsCustom">
+          <div
+            className="flex items-center gap-5 cursor-pointer rounded-full w-fit p-5 text-backLightDark bg-white font-krona shadow-lg"
+            onClick={() => {
+              signIn();
+            }}
+          >
+            <FcGoogle className="text-xl" />
+            login with Google account
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default index;

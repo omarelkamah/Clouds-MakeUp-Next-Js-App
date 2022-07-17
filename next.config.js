@@ -17,6 +17,7 @@ const nextConfig = {
       "s3.amazonaws.com",
       "www.benefitcosmetics.com",
       "www.smashbox.com",
+      "lh3.googleusercontent.com",
     ],
   },
 };
