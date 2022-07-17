@@ -4,12 +4,15 @@ import { AiFillHeart } from 'react-icons/ai'
 import { BsHandbag } from 'react-icons/bs'
 import BrandLogo from '../ui/BrandLogo'
 import AmountNumber from '../ui/AmountNumber'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
   //TODO: change Icons in navbar
   //TODO: Make main manue show in desktop
-
   const [showMenue, setShowMenue] = useState(false)
+  const { items } = useSelector(state => state.cart)
+  console.log(items)
+
   return (
     <div className='container mx-auto flex justify-between items-center p-4 px-8 font-krona font-bold'>
       <BrandLogo />
@@ -29,7 +32,7 @@ const Navbar = () => {
         </Link>
         <Link href='/cart'>
           <div className='relative'>
-            <AmountNumber amount='3' />
+            <AmountNumber amount={items.lenght} />
             <BsHandbag className='text-xl cursor-pointer' />
           </div>
         </Link>
