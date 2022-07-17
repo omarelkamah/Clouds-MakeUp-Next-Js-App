@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { AiFillHeart } from 'react-icons/ai'
+import { AiFillHeart, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { BsHandbag } from 'react-icons/bs'
 import BrandLogo from '../ui/BrandLogo'
 import AmountNumber from '../ui/AmountNumber'
@@ -38,8 +38,8 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <AiFillHeart
-        className='cursor-pointer block sm:hidden text-2xl'
+      <AiOutlineMenu
+        className='cursor-pointer block sm:hidden text-3xl'
         onClick={() => setShowMenue(true)}
       />
       <div
@@ -47,8 +47,8 @@ const Navbar = () => {
           showMenue ? 'right-0' : '-right-[100%]'
         }  top-0 w-[60%] transition-all h-screen z-10 flex flex-col items-center justify-center bg-white gap-8`}
       >
-        <AiFillHeart
-          className='absolute top-8 right-8 text-xl cursor-pointer'
+        <AiOutlineClose
+          className='absolute top-8 right-8 text-2xl cursor-pointer'
           onClick={() => setShowMenue(false)}
         />
         <div className='text-xs flex flex-col items-center justify-center gap-8'>
