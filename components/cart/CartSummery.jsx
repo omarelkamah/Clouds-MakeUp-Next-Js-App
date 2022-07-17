@@ -1,7 +1,11 @@
 import React from 'react'
 import Button from '../ui/Button'
 
-const CartSummery = () => {
+const CartSummery = ({ products }) => {
+  const totalPrice = products.reduce(
+    (totalPrice, product) => totalPrice + +product.price * product.qty,
+    0
+  )
   return (
     <div className='flex-1 p-3'>
       <h3 className='font-krona mb-6 text-center text-lg'>ORDER SUMMARY</h3>
@@ -19,7 +23,7 @@ const CartSummery = () => {
       </div>
       <div className='flex justify-between font-krona mb-8'>
         <p className=''>Total</p>
-        <p>$ 261.830</p>
+        <p>$ {totalPrice}</p>
       </div>
       <div className='flex justify-center'>
         <Button title='check out' link='/checkout' />
