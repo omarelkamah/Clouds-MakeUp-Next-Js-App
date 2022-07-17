@@ -51,6 +51,7 @@ const Navbar = () => {
         wishItems={wishItems}
         items={items}
         signIn={signIn}
+        image={user.image}
       />
     </nav>
   )

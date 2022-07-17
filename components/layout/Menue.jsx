@@ -4,8 +4,16 @@ import { AiFillHeart, AiOutlineClose } from 'react-icons/ai'
 import { BsHandbag } from 'react-icons/bs'
 import AmountNumber from '../ui/AmountNumber'
 import UserDetails from './UserDetails'
+import user from '../../store/slice/user'
 
-const Menue = ({ showMenue, setShowMenue, wishItems, items, signIn }) => {
+const Menue = ({
+  showMenue,
+  setShowMenue,
+  wishItems,
+  items,
+  signIn,
+  image
+}) => {
   return (
     <div
       className={`fixed ${
@@ -39,7 +47,9 @@ const Menue = ({ showMenue, setShowMenue, wishItems, items, signIn }) => {
           <BsHandbag className='text-xl cursor-pointer' />
         </div>
       </Link>
-      {signIn && <UserDetails onClick={() => setShowMenue(false)} />}
+      {signIn && (
+        <UserDetails onClick={() => setShowMenue(false)} image={image} />
+      )}
     </div>
   )
 }

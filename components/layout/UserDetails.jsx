@@ -6,10 +6,10 @@ const UserDetails = ({ onClick, image }) => {
   return (
     <Link href='/user'>
       <Image
-        src={image}
+        src={image ? image : '/images/banner.png'}
         alt='userImage'
-        width='50'
-        height='50'
+        width='40'
+        height='40'
         className='rounded-full cursor-pointer'
         onClick={onClick}
       />
