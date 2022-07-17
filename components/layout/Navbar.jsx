@@ -32,7 +32,7 @@ const Navbar = () => {
         </Link>
         <Link href='/cart'>
           <div className='relative'>
-            <AmountNumber amount={items.lenght} />
+            <AmountNumber amount={items.length} />
             <BsHandbag className='text-xl cursor-pointer' />
           </div>
         </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
         </Link>
         <Link href='/cart'>
           <div className='relative' onClick={() => setShowMenue(false)}>
-            <AmountNumber amount='3' />
+            <AmountNumber amount={items.length} />
             <BsHandbag className='text-xl cursor-pointer' />
           </div>
         </Link>
