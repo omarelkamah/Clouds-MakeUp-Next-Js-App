@@ -3,16 +3,16 @@ import React from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import { setUser } from "../../store/slice/user";
 
 const index = () => {
-  // Make Sign in with Google
   const { data: session } = useSession();
   const dispatch = useDispatch();
+  const router = useRouter();
 
   session?.user && dispatch(setUser(session.user));
-
-  // console.log(session);
+  session?.user && router.push("/");
 
   if (session) {
     return (
