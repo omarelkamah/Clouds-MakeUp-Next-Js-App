@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { AiFillHeart, AiOutlineMenu } from 'react-icons/ai'
-import { BsHandbag } from 'react-icons/bs'
 import BrandLogo from '../ui/BrandLogo'
 import AmountNumber from '../ui/AmountNumber'
-import { useSelector } from 'react-redux'
 import Menue from './Menue'
 import UserDetails from './UserDetails'
-
+import { AiFillHeart, AiOutlineMenu } from 'react-icons/ai'
+import { BsHandbag } from 'react-icons/bs'
+import { useSelector } from 'react-redux'
 import { useSession, signIn } from 'next-auth/react'
 
 const Navbar = () => {
@@ -25,6 +24,13 @@ const Navbar = () => {
           <Link href='/search'>search</Link>
           <Link href='/about'>about</Link>
         </div>
+        {session ? (
+          <UserDetails image={session?.user.image} />
+        ) : (
+          <Link href='/login'>
+            <a className='text-xs'>login</a>
+          </Link>
+        )}
         <Link href='/wishlist'>
           <div className='relative'>
             <AmountNumber amount={wishItems.length} />
@@ -37,7 +43,6 @@ const Navbar = () => {
             <BsHandbag className='text-xl cursor-pointer' />
           </div>
         </Link>
-        {session && <UserDetails image={session?.user.image} />}
       </div>
 
       <AiOutlineMenu
@@ -50,7 +55,7 @@ const Navbar = () => {
         setShowMenue={setShowMenue}
         wishItems={wishItems}
         items={items}
-        signIn={signIn}
+        session={session}
         image={session?.user.image}
       />
     </nav>

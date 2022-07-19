@@ -11,7 +11,7 @@ const Menue = ({
   setShowMenue,
   wishItems,
   items,
-  signIn,
+  session,
   image
 }) => {
   return (
@@ -35,6 +35,17 @@ const Menue = ({
           <a onClick={() => setShowMenue(false)}>about</a>
         </Link>
       </div>
+
+      {session ? (
+        <UserDetails image={image} onClick={() => setShowMenue(false)} />
+      ) : (
+        <Link href='/login'>
+          <a className='text-xs' onClick={() => setShowMenue(false)}>
+            login
+          </a>
+        </Link>
+      )}
+
       <Link href='/wishlist'>
         <div className='relative' onClick={() => setShowMenue(false)}>
           <AmountNumber amount={wishItems.length} />
@@ -47,9 +58,6 @@ const Menue = ({
           <BsHandbag className='text-xl cursor-pointer' />
         </div>
       </Link>
-      {signIn && (
-        <UserDetails onClick={() => setShowMenue(false)} image={image} />
-      )}
     </div>
   )
 }

@@ -26,7 +26,7 @@ const index = () => {
     );
   } else {
     return (
-      <div>
+      <div className="overlay">
         <div className="overlay" />
         <div>
           <Image
@@ -36,7 +36,7 @@ const index = () => {
             alt="background"
           />
         </div>
-        <div className="flex justify-center absolute z-10 centerItemsCustom">
+        <div className="flex justify-center absolute z-10 centerItemsCustom text-xs sm:text-lg">
           <div
             className="flex items-center gap-5 cursor-pointer rounded-full w-fit p-5 text-backLightDark bg-white font-krona shadow-lg"
             onClick={() => signIn({ callbackUrl: "/" })}
