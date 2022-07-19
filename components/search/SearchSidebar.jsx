@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchPrice from './SearchPrice'
 import SearchSelectMenue from './SearchSelectMenue'
 import SearchSidebarLinks from './SearchSidebarLinks'
+import SearchToglerMenue from './SearchToglerMenue'
 
 const SearchSidebar = () => {
+  const [openMenue, setOpenMenue] = useState(false)
   return (
     <div className='sm:w-fit'>
-      <SearchPrice />
-      <SearchSelectMenue />
-      <SearchSidebarLinks />
+      <SearchToglerMenue openMenue={openMenue} setOpenMenue={setOpenMenue} />
+      <div className='hidden sm:block'>
+        <SearchPrice />
+        <SearchSelectMenue />
+        <SearchSidebarLinks />
+      </div>
     </div>
   )
 }

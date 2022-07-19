@@ -7,7 +7,6 @@ export const getStaticProps = async () => {
   const res = await fetch(
     'http://makeup-api.herokuapp.com/api/v1/products.json'
   )
-  // const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   const data = await res.json()
 
   console.log(data)

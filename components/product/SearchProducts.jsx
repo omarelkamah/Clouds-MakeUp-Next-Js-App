@@ -3,6 +3,7 @@ import Product from './Product'
 import Loader from '../ui/Loader'
 
 const SearchProducts = ({ products }) => {
+  console.log(products)
   return (
     <div className='flex flex-wrap mb-16 flex-1 justify-center'>
       {products ? (
@@ -13,6 +14,7 @@ const SearchProducts = ({ products }) => {
             name={product.name}
             price={product.price}
             image={product.image_link}
+            category={product.category}
           />
         ))
       ) : (
