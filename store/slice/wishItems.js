@@ -16,8 +16,6 @@ const wishItems = createSlice({
       } else {
         state.wishItems = [...state.wishItems, { ...action.payload, qty: 1 }];
       }
-
-      console.log(state.wishItems);
     },
     removeFromWishList: (state, action) => {
       const exist = state.wishItems.find((x) => x.id === action.payload.id);

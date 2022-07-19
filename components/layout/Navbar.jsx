@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { AiFillHeart, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import { AiFillHeart, AiOutlineMenu } from 'react-icons/ai'
 import { BsHandbag } from 'react-icons/bs'
 import BrandLogo from '../ui/BrandLogo'
 import AmountNumber from '../ui/AmountNumber'
 import { useSelector } from 'react-redux'
 import Menue from './Menue'
 import UserDetails from './UserDetails'
-// import user from '../../store/slice/user'
+
+import { useSession, signIn } from 'next-auth/react'
 
 const Navbar = () => {
   const [showMenue, setShowMenue] = useState(false)
+  const { data: session } = useSession()
   const { items } = useSelector(state => state.cart)
-  const { signIn, user } = useSelector(state => state.user)
   const { wishItems } = useSelector(state => state.wish)
-  console.log(user)
 
   return (
     <nav className='container mx-auto flex justify-between items-center p-4 px-8 font-krona font-bold'>
@@ -37,7 +37,7 @@ const Navbar = () => {
             <BsHandbag className='text-xl cursor-pointer' />
           </div>
         </Link>
-        {signIn && <UserDetails image={user.image} />}
+        {session && <UserDetails image={session?.user.image} />}
       </div>
 
       <AiOutlineMenu
@@ -51,7 +51,7 @@ const Navbar = () => {
         wishItems={wishItems}
         items={items}
         signIn={signIn}
-        image={user.image}
+        image={session?.user.image}
       />
     </nav>
   )

@@ -1,17 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { useSession, signOut } from 'next-auth/react'
 import Button from '../../components/ui/Button'
 
 const index = () => {
   // const { data: session } = useSession()
-
   const { user } = useSelector(state => state.user)
-  const router = useRouter()
-
-  // Object.keys(user).length === 0 && console.log(router.push('/'))
 
   return (
     <div className='container mx-auto my-10 flex flex-col items-center justify-center'>

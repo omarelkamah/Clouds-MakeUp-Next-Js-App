@@ -5,8 +5,6 @@ import Loader from '../ui/Loader'
 import Product from './Product'
 
 const Products = ({ products }) => {
-  console.log(products)
-
   return (
     <div className='container mx-auto my-5'>
       <Heading title='Clean beauty' />

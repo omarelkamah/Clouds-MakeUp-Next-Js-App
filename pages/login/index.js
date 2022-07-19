@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
@@ -11,17 +11,14 @@ const index = () => {
   const dispatch = useDispatch();
   const router = useRouter();
 
-  session?.user && dispatch(setUser(session.user));
+  // session?.user && dispatch(setUser(session.user));
   session?.user && router.push("/");
 
   if (session) {
     return (
       <div
         className="flex items-center gap-5 cursor-pointer rounded-full w-fit p-5 text-backLightDark bg-white font-krona shadow-lg"
-        onClick={() => {
-          signOut();
-          // dispatch(setUser(session.user));
-        }}
+        onClick={() => signOut()}
       >
         <FcGoogle className="text-xl" />
         logout with Google account
@@ -42,9 +39,7 @@ const index = () => {
         <div className="flex justify-center absolute z-10 centerItemsCustom">
           <div
             className="flex items-center gap-5 cursor-pointer rounded-full w-fit p-5 text-backLightDark bg-white font-krona shadow-lg"
-            onClick={() => {
-              signIn();
-            }}
+            onClick={() => signIn({ callbackUrl: "/" })}
           >
             <FcGoogle className="text-xl" />
             login with Google account

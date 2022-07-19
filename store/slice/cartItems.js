@@ -16,8 +16,6 @@ const cartItems = createSlice({
       } else {
         state.items = [...state.items, { ...action.payload, qty: 1 }];
       }
-
-      console.log(state.items);
     },
     removeFromCart: (state, action) => {
       const exist = state.items.find((x) => x.id === action.payload.id);
