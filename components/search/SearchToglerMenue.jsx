@@ -1,5 +1,5 @@
 import React from 'react'
-import { AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import SearchPrice from './SearchPrice'
 import SearchSelectMenue from './SearchSelectMenue'
 import SearchSidebarLinks from './SearchSidebarLinks'
@@ -8,12 +8,20 @@ const SearchToglerMenue = ({ openMenue, setOpenMenue }) => {
   return (
     <div className='relative'>
       <div
-        className='sm:hidden bg-backLightGray p-5 flex justify-center cursor-pointer'
+        className='sm:hidden bg-backLightGray p-5 flex justify-center cursor-pointer transition-all'
         onClick={() => setOpenMenue(!openMenue)}
       >
-        <AiOutlineMenu className='text-xl' />
+        {openMenue ? (
+          <AiOutlineClose className='text-xl' />
+        ) : (
+          <AiOutlineMenu className='text-xl' />
+        )}
       </div>
-      <div className={` ${openMenue ? '' : ''} transition-all`}>
+      <div
+        className={` absolute ${
+          openMenue ? 'left-0' : '-left-[105%] '
+        } bg-white z-10 w-full transition-all`}
+      >
         <SearchPrice />
         <SearchSelectMenue />
         <SearchSidebarLinks />
