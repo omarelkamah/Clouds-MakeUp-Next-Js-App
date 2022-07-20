@@ -6,7 +6,7 @@ import SearchSidebarLinks from './SearchSidebarLinks'
 const SearchToglerMenue = ({ openMenue, setOpenMenue }) => {
   console.log(openMenue)
   return (
-    <div>
+    <div className='relative'>
       <div
         className='sm:hidden bg-backLightGray p-5 flex justify-center cursor-pointer'
         onClick={() => setOpenMenue(!openMenue)}
