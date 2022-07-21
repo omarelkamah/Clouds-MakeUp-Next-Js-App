@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Poster from '../../components/ui/Poster'
 import SearchProducts from '../../components/product/SearchProducts'
 import SearchSidebar from '../../components/search/SearchSidebar'
@@ -17,13 +17,19 @@ export const getStaticProps = async () => {
 }
 
 const index = ({ products }) => {
+  const [productsData, setProductsData] = useState(products)
+
   console.log(products)
+
   return (
     <div className='container mx-auto'>
       <Poster bottom='0' />
       <div className='mt-5 flex flex-col sm:flex-row'>
-        <SearchSidebar />
-        <SearchProducts products={products} />
+        <SearchSidebar
+          products={productsData}
+          setProductsData={setProductsData}
+        />
+        <SearchProducts products={productsData} />
       </div>
     </div>
   )

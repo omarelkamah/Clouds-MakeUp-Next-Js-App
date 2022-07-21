@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const SearchSidebarLinks = () => {
+const SearchSidebarLinks = ({ setProductsData }) => {
+  const [link, setLink] = useState('')
+  console.log(link)
+
+  const handelLinkClick = async value => {
+    setLink(value)
+    const req = await fetch(
+      `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${link}`
+    )
+
+    const data = await req.json()
+
+    setProductsData(data)
+  }
+
   const skins = [
     { id: 1, title: 'foundation' },
     { id: 2, title: 'blush' },
@@ -17,6 +31,7 @@ const SearchSidebarLinks = () => {
     { id: 2, title: 'lip liner' }
   ]
   const nails = [{ id: 1, title: 'nail polish' }]
+
   return (
     <div className='bg-backLightGray p-4 py-5 mb-8 font-base text-sm text-backLightDark'>
       <div>
@@ -27,6 +42,7 @@ const SearchSidebarLinks = () => {
               <span
                 key={skin.id}
                 className='ml-5 mb-1 block cursor-pointer hover:text-backYellow'
+                onClick={e => handelLinkClick(skin.title)}
               >
                 {skin.title}
               </span>
@@ -40,6 +56,7 @@ const SearchSidebarLinks = () => {
               <span
                 key={eye.id}
                 className='ml-5 mb-1 block cursor-pointer hover:text-backYellow'
+                onClick={() => handelLinkClick(eye.title)}
               >
                 {eye.title}
               </span>
@@ -53,6 +70,7 @@ const SearchSidebarLinks = () => {
               <span
                 key={lip.id}
                 className='ml-5 mb-1 block cursor-pointer hover:text-backYellow'
+                onClick={() => handelLinkClick(lip.title)}
               >
                 {lip.title}
               </span>
@@ -66,6 +84,7 @@ const SearchSidebarLinks = () => {
               <span
                 key={nail.id}
                 className='ml-5 mb-1 block cursor-pointer hover:text-backYellow'
+                onClick={() => handelLinkClick(nail.title)}
               >
                 {nail.title}
               </span>

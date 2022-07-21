@@ -19,7 +19,7 @@ const SearchToglerMenue = ({ openMenue, setOpenMenue }) => {
       </div>
       <div
         className={` absolute ${
-          openMenue ? 'left-0' : '-left-[105%] '
+          openMenue ? 'left-0' : '-left-[150%] '
         } bg-white z-10 w-full transition-all`}
       >
         <SearchPrice />
