@@ -4,13 +4,17 @@ import SearchSelectMenue from './SearchSelectMenue'
 import SearchSidebarLinks from './SearchSidebarLinks'
 import SearchToglerMenue from './SearchToglerMenue'
 
-const SearchSidebar = ({ products, setProductsData }) => {
+const SearchSidebar = ({ setProductsData }) => {
   const [openMenue, setOpenMenue] = useState(false)
   return (
     <div className='sm:w-fit'>
-      <SearchToglerMenue openMenue={openMenue} setOpenMenue={setOpenMenue} />
+      <SearchToglerMenue
+        openMenue={openMenue}
+        setOpenMenue={setOpenMenue}
+        setProductsData={setProductsData}
+      />
       <div className='hidden sm:block'>
-        <SearchPrice />
+        <SearchPrice setProductsData={setProductsData} />
         <SearchSelectMenue setProductsData={setProductsData} />
         <SearchSidebarLinks setProductsData={setProductsData} />
       </div>

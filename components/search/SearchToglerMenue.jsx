@@ -3,7 +3,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import SearchPrice from './SearchPrice'
 import SearchSelectMenue from './SearchSelectMenue'
 import SearchSidebarLinks from './SearchSidebarLinks'
-const SearchToglerMenue = ({ openMenue, setOpenMenue }) => {
+const SearchToglerMenue = ({ openMenue, setOpenMenue, setProductsData }) => {
   console.log(openMenue)
   return (
     <div className='relative'>
@@ -22,9 +22,9 @@ const SearchToglerMenue = ({ openMenue, setOpenMenue }) => {
           openMenue ? 'left-0' : '-left-[150%] '
         } bg-white z-10 w-full transition-all`}
       >
-        <SearchPrice />
-        <SearchSelectMenue />
-        <SearchSidebarLinks />
+        <SearchPrice setProductsData={setProductsData} />
+        <SearchSelectMenue setProductsData={setProductsData} />
+        <SearchSidebarLinks setProductsData={setProductsData} />
       </div>
     </div>
   )

@@ -25,10 +25,7 @@ const index = ({ products }) => {
     <div className='container mx-auto'>
       <Poster bottom='0' />
       <div className='mt-5 flex flex-col sm:flex-row'>
-        <SearchSidebar
-          products={productsData}
-          setProductsData={setProductsData}
-        />
+        <SearchSidebar setProductsData={setProductsData} />
         <SearchProducts products={productsData} />
       </div>
     </div>
