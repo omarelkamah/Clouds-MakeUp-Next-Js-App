@@ -6,7 +6,7 @@ const SearchSelectMenue = ({ setProductsData }) => {
 
   const fetchProductsByBrand = async () => {
     const req = await fetch(
-      `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
+      `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
     )
 
     const data = await req.json()

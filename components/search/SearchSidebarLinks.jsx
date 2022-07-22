@@ -7,7 +7,7 @@ const SearchSidebarLinks = ({ setProductsData }) => {
   const handelLinkClick = async value => {
     setLink(value)
     const req = await fetch(
-      `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${link}`
+      `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${link}`
     )
 
     const data = await req.json()

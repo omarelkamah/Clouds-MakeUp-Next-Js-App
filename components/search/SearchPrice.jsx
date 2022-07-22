@@ -7,7 +7,7 @@ const SearchPrice = ({ setProductsData }) => {
   const fetchDataByPrice = async () => {
     console.log(min, max)
     const req = await fetch(
-      `http://makeup-api.herokuapp.com/api/v1/products.json?price_greater_than=${Number(
+      `https://makeup-api.herokuapp.com/api/v1/products.json?price_greater_than=${Number(
         min
       )}&price_less_than=${Number(max)}`
     )

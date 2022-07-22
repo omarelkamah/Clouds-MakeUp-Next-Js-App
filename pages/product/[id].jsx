@@ -15,7 +15,7 @@ import Product from '../../components/product/Product'
 
 export const getStaticPaths = async () => {
   const res = await fetch(
-    'http://makeup-api.herokuapp.com/api/v1/products.json'
+    'https://makeup-api.herokuapp.com/api/v1/products.json'
   )
   const products = await res.json()
 
@@ -31,13 +31,13 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async context => {
   const id = context.params.id
   const res = await fetch(
-    `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`
+    `https://makeup-api.herokuapp.com/api/v1/products/${id}.json`
   )
   const product = await res.json()
 
   // Fetch Similar Products
   const fetchSimilarProducts = await fetch(
-    `http://makeup-api.herokuapp.com/api/v1/products.json?product_category=${product.category}`
+    `https://makeup-api.herokuapp.com/api/v1/products.json?product_category=${product.category}`
   )
 
   const getSimilarProducts = await fetchSimilarProducts.json()
@@ -55,8 +55,6 @@ const SingleProduct = ({ product, id, getSimilarProducts }) => {
     const filteredItems = items.filter(item => item.id == id)
 
     filteredItems.map(item => (amount += item.qty))
-    console.log(amount)
-    // return filteredItems
   }
 
   getAmount()
@@ -129,6 +127,7 @@ const SingleProduct = ({ product, id, getSimilarProducts }) => {
               name={similarProduct.name}
               image={similarProduct.image_link}
               price={similarProduct.price}
+              category={product.category}
             />
           ))}
         </div>

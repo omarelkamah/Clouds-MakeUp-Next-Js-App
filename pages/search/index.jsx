@@ -5,7 +5,7 @@ import SearchSidebar from '../../components/search/SearchSidebar'
 
 export const getStaticProps = async () => {
   const res = await fetch(
-    'http://makeup-api.herokuapp.com/api/v1/products.json'
+    'https://makeup-api.herokuapp.com/api/v1/products.json'
   )
   const data = await res.json()
 
