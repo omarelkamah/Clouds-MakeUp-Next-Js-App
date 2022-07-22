@@ -45,7 +45,7 @@ export const getStaticProps = async context => {
   return { props: { product, id, getSimilarProducts } }
 }
 
-const singleProduct = ({ product, id, getSimilarProducts }) => {
+const SingleProduct = ({ product, id, getSimilarProducts }) => {
   console.log(getSimilarProducts)
   const { items } = useSelector(state => state.cart)
   const dispatch = useDispatch()
@@ -139,4 +139,4 @@ const singleProduct = ({ product, id, getSimilarProducts }) => {
   )
 }
 
-export default singleProduct
+export default SingleProduct

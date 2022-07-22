@@ -19,8 +19,6 @@ export const getStaticProps = async () => {
 const SearchPage = ({ products }) => {
   const [productsData, setProductsData] = useState(products)
 
-  // console.log(products)
-
   return (
     <div className='container mx-auto'>
       <Poster bottom='0' />

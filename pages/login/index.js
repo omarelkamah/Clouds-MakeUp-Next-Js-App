@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { setUser } from "../../store/slice/user";
 
-const index = () => {
+const LoginPage = () => {
   const { data: session } = useSession();
   const dispatch = useDispatch();
   const router = useRouter();
@@ -50,4 +50,4 @@ const index = () => {
   }
 };
 
-export default index;
+export default LoginPage;
