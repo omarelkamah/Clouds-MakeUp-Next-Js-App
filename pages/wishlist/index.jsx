@@ -3,7 +3,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import WishListProduct from '../../components/product/WishListProduct'
 
-const index = () => {
+const WishListPage = () => {
   const { wishItems } = useSelector(state => state.wish)
   return (
     <div className='container mx-auto mb-10'>
@@ -29,4 +29,4 @@ const index = () => {
   )
 }
 
-export default index
+export default WishListPage

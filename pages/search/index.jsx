@@ -16,7 +16,7 @@ export const getStaticProps = async () => {
   }
 }
 
-const index = ({ products }) => {
+const SearchPage = ({ products }) => {
   const [productsData, setProductsData] = useState(products)
 
   // console.log(products)
@@ -32,4 +32,4 @@ const index = ({ products }) => {
   )
 }
 
-export default index
+export default SearchPage

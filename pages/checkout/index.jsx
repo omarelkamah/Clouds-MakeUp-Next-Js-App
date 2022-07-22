@@ -4,7 +4,7 @@ import SecondProduct from '../../components/product/SecondProduct'
 import CheckoutSummery from '../../components/checkout/CheckoutSummery'
 import { useSelector } from 'react-redux'
 
-const index = () => {
+const CheckoutPage = () => {
   const { items } = useSelector(state => state.cart)
 
   const totalPrice = items.reduce(
@@ -87,4 +87,4 @@ const index = () => {
   )
 }
 
-export default index
+export default CheckoutPage

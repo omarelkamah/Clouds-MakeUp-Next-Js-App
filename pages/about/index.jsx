@@ -2,7 +2,7 @@ import React from 'react'
 import AboutHeading from '../../components/about/AboutHeading'
 import AboutStatics from '../../components/about/AboutStatics'
 
-const index = () => {
+const AboutPage = () => {
   return (
     <div>
       <AboutHeading />
@@ -22,4 +22,4 @@ const index = () => {
   )
 }
 
-export default index
+export default AboutPage

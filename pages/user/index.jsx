@@ -4,7 +4,7 @@ import { useSession, signOut, signIn } from 'next-auth/react'
 import Button from '../../components/ui/Button'
 import { FcGoogle } from 'react-icons/fc'
 
-const index = () => {
+const UserPage = () => {
   const { data: session } = useSession()
 
   return (
@@ -40,4 +40,4 @@ const index = () => {
   )
 }
 
-export default index
+export default UserPage

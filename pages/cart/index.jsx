@@ -3,7 +3,7 @@ import SecondProducts from '../../components/product/SecondProducts'
 import CartSummery from '../../components/cart/CartSummery'
 import { useSelector } from 'react-redux'
 
-const index = () => {
+const CartPage = () => {
   const { items } = useSelector(state => state.cart)
 
   return (
@@ -14,4 +14,4 @@ const index = () => {
   )
 }
 
-export default index
+export default CartPage
