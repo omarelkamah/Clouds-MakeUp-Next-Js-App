@@ -11,7 +11,7 @@ const Product = ({ id, name, price, image, category }) => {
           <Image src={image} layout='fill' objectFit='cover' alt='Product' />
         </div>
         <div className='flex flex-col'>
-          <Link href={``}>
+          <Link href={`/category/${category}`}>
             <a className='text-backYellow text-sm mt-4'>{category}</a>
           </Link>
           <h4 className='font-base my-4 leading-5'>{name}</h4>

@@ -46,7 +46,6 @@ export const getStaticProps = async context => {
 }
 
 const SingleProduct = ({ product, id, getSimilarProducts }) => {
-  console.log(getSimilarProducts)
   const { items } = useSelector(state => state.cart)
   const dispatch = useDispatch()
   const getLimitedSimilarProducts = getSimilarProducts.slice(0, 4)
@@ -87,8 +86,8 @@ const SingleProduct = ({ product, id, getSimilarProducts }) => {
             add to favorites
           </div>
           <div>
-            <Link href='/category/'>
-              <a className='text-backYellow'>{product.category}</a>
+            <Link href={`/category/${product.category}`}>
+              <a className='text-backYellow mb-2'>{product.category}</a>
             </Link>
             <h1 className='font-krona'>{product.name}</h1>
           </div>
@@ -133,7 +132,6 @@ const SingleProduct = ({ product, id, getSimilarProducts }) => {
             />
           ))}
         </div>
-        {/* <Product /> */}
       </div>
     </div>
   )
