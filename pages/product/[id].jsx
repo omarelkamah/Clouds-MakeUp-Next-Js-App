@@ -9,7 +9,9 @@ import Poster from '../../components/ui/Poster'
 import Counter from '../../components/ui/Counter'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeFromCart } from '../../store/slice/cartItems'
-import { addToWishList, removeFromWishList } from '../../store/slice/wishItems'
+import { addToWishList } from '../../store/slice/wishItems'
+import index from '../search'
+import Product from '../../components/product/Product'
 
 export const getStaticPaths = async () => {
   const res = await fetch(
@@ -40,16 +42,14 @@ export const getStaticProps = async context => {
 
   const getSimilarProducts = await fetchSimilarProducts.json()
 
-  console.log(product)
-
   return { props: { product, id, getSimilarProducts } }
 }
 
-const Product = ({ product, id, getSimilarProducts }) => {
+const singleProduct = ({ product, id, getSimilarProducts }) => {
   console.log(getSimilarProducts)
-  // get products with same category
   const { items } = useSelector(state => state.cart)
   const dispatch = useDispatch()
+  const getLimitedSimilarProducts = getSimilarProducts.slice(0, 4)
 
   let amount = 0
   const getAmount = () => {
@@ -122,10 +122,21 @@ const Product = ({ product, id, getSimilarProducts }) => {
       <Features />
       <div>
         <h3 className='text-center font-krona text-xl'>For You</h3>
+        <div className='flex flex-wrap justify-center'>
+          {getLimitedSimilarProducts.map(similarProduct => (
+            <Product
+              key={similarProduct.id}
+              id={similarProduct.id}
+              name={similarProduct.name}
+              image={similarProduct.image_link}
+              price={similarProduct.price}
+            />
+          ))}
+        </div>
         {/* <Product /> */}
       </div>
     </div>
   )
 }
 
-export default Product
+export default singleProduct
