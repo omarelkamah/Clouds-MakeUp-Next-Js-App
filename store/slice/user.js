@@ -9,7 +9,6 @@ const user = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
       state.signIn = true;
-      console.log(state.user);
       localStorage.removeItem("user");
       if (localStorage.getItem("user") === null) {
         localStorage.setItem("user", JSON.stringify(state.user));

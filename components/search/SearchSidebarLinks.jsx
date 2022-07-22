@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 const SearchSidebarLinks = ({ setProductsData }) => {
   const [link, setLink] = useState('')
-  console.log(link)
 
   const handelLinkClick = async value => {
     setLink(value)

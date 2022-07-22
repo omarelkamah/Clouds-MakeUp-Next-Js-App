@@ -5,7 +5,6 @@ const SearchPrice = ({ setProductsData }) => {
   const [max, setMax] = useState('')
 
   const fetchDataByPrice = async () => {
-    console.log(min, max)
     const req = await fetch(
       `https://makeup-api.herokuapp.com/api/v1/products.json?price_greater_than=${Number(
         min
@@ -13,7 +12,6 @@ const SearchPrice = ({ setProductsData }) => {
     )
     const data = await req.json()
     setProductsData(data)
-    // console.log(data)
   }
 
   return (

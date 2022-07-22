@@ -7,7 +7,6 @@ export const getStaticPaths = async () => {
   );
   const products = await res.json();
 
-  console.log(products);
   const paths = products.map((product) => {
     return {
       params: { categoryName: String(product.category) },
@@ -28,7 +27,6 @@ export const getStaticProps = async (context) => {
 };
 
 const CategoryPage = ({ products }) => {
-  console.log(products);
   return (
     <div className="flex flex-wrap justify-center">
       {products.map((product) => (
