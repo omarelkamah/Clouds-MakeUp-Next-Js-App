@@ -33,10 +33,20 @@ export const getStaticProps = async context => {
   )
   const product = await res.json()
 
-  return { props: { product, id } }
+  // Fetch Similar Products
+  const fetchSimilarProducts = await fetch(
+    `http://makeup-api.herokuapp.com/api/v1/products.json?product_category=${product.category}`
+  )
+
+  const getSimilarProducts = await fetchSimilarProducts.json()
+
+  console.log(product)
+
+  return { props: { product, id, getSimilarProducts } }
 }
 
-const Product = ({ product, id }) => {
+const Product = ({ product, id, getSimilarProducts }) => {
+  console.log(getSimilarProducts)
   // get products with same category
   const { items } = useSelector(state => state.cart)
   const dispatch = useDispatch()

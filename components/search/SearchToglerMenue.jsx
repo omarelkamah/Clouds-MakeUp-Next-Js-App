@@ -4,7 +4,6 @@ import SearchPrice from './SearchPrice'
 import SearchSelectMenue from './SearchSelectMenue'
 import SearchSidebarLinks from './SearchSidebarLinks'
 const SearchToglerMenue = ({ openMenue, setOpenMenue, setProductsData }) => {
-  console.log(openMenue)
   return (
     <div className='relative'>
       <div
