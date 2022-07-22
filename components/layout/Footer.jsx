@@ -16,29 +16,29 @@ const Footer = () => {
   ]
 
   const skincare = [
-    { id: 1, link: '/', title: 'makeup' },
-    { id: 2, link: '/', title: 'skincare' },
-    { id: 3, link: '/', title: 'fragrance' }
+    { id: 1, link: '/category/powder', title: 'powder' },
+    { id: 2, link: '/category/cream', title: 'skincare' },
+    { id: 3, link: '/category/cream', title: 'fragrance' }
   ]
 
   const makeup = [
-    { id: 1, link: '/', title: 'base' },
-    { id: 2, link: '/', title: 'contour' },
-    { id: 3, link: '/', title: 'eye makeup' },
-    { id: 4, link: '/', title: 'lips' }
+    { id: 1, link: '/category/powder', title: 'base' },
+    { id: 2, link: '/category/powder', title: 'contour' },
+    { id: 3, link: '/category/powder', title: 'eye makeup' },
+    { id: 4, link: '/category/powder', title: 'lips' }
   ]
 
   const suppllements = [
-    { id: 1, link: '/', title: 'hair and nails' },
-    { id: 2, link: '/', title: 'vitamins' },
-    { id: 3, link: '/', title: 'vitamins' },
-    { id: 4, link: '/', title: 'nutrients' }
+    { id: 1, link: '/category/pencil', title: 'hair and nails' },
+    { id: 2, link: '/category/liquid', title: 'vitamins' },
+    { id: 3, link: '/category/gel', title: 'vitamins' },
+    { id: 4, link: '/category/powder', title: 'nutrients' }
   ]
 
   const categoryLinks = [
-    { id: 1, link: '/makeup', title: 'MakeUp' },
-    { id: 2, link: '/skincare', title: 'skincare' },
-    { id: 3, link: '/fragrance', title: 'fragrance' }
+    { id: 1, link: '/category/palette', title: 'MakeUp' },
+    { id: 2, link: '/category/cream', title: 'skincare' },
+    { id: 3, link: '/category/powder', title: 'fragrance' }
   ]
 
   return (

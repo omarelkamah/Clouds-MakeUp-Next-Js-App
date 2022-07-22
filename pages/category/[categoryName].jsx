@@ -18,13 +18,13 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async context => {
-  const cateName = context.params.categoryName
+  const categoryName = context.params.categoryName
   const res = await fetch(
-    `https://makeup-api.herokuapp.com/api/v1/products.json?product_category=${cateName}`
+    `https://makeup-api.herokuapp.com/api/v1/products.json?product_category=${categoryName}`
   )
   const products = await res.json()
 
-  return { props: { products, cateName } }
+  return { props: { products } }
 }
 
 const Category = ({ products }) => {
