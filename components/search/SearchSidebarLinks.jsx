@@ -1,17 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-const SearchSidebarLinks = ({ setProductsData }) => {
+const SearchSidebarLinks = ({ setProductsData, setOpenMenue }) => {
   const [link, setLink] = useState('')
+  // const prevLinkState = useRef()
 
   const handelLinkClick = async value => {
+    setOpenMenue(false)
     setLink(value)
+
+    setProductsData([])
+    console.log('link', link)
+
     const req = await fetch(
       `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${link}`
     )
 
     const data = await req.json()
 
-    setProductsData(data)
+    setTimeout(() => {
+      setProductsData(data)
+    }, 1500)
   }
 
   const skins = [

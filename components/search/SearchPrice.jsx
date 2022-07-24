@@ -5,6 +5,7 @@ const SearchPrice = ({ setProductsData }) => {
   const [max, setMax] = useState('')
 
   const fetchDataByPrice = async () => {
+    setProductsData([])
     const req = await fetch(
       `https://makeup-api.herokuapp.com/api/v1/products.json?price_greater_than=${Number(
         min
@@ -24,8 +25,8 @@ const SearchPrice = ({ setProductsData }) => {
             id='min'
             placeholder='min'
             className='p-1 w-16 text-center outline-backYellow mb-1'
+            onChange={e => setMin(e.target.value)}
             onBlur={e => {
-              setMin(e.target.value)
               fetchDataByPrice()
             }}
           />
@@ -41,8 +42,9 @@ const SearchPrice = ({ setProductsData }) => {
             id='max'
             placeholder='max'
             className='p-1 w-16 text-center outline-backYellow mb-1'
+            onChange={e => setMax(e.target.value)}
             onBlur={e => {
-              setMax(e.target.value)
+              // setMax(e.target.value)
               fetchDataByPrice()
             }}
           />

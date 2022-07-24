@@ -22,8 +22,14 @@ const SearchToglerMenue = ({ openMenue, setOpenMenue, setProductsData }) => {
         } bg-white z-10 w-full transition-all`}
       >
         <SearchPrice setProductsData={setProductsData} />
-        <SearchSelectMenue setProductsData={setProductsData} />
-        <SearchSidebarLinks setProductsData={setProductsData} />
+        <SearchSelectMenue
+          setProductsData={setProductsData}
+          setOpenMenue={setOpenMenue}
+        />
+        <SearchSidebarLinks
+          setProductsData={setProductsData}
+          setOpenMenue={setOpenMenue}
+        />
       </div>
     </div>
   )

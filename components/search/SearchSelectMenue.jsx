@@ -1,17 +1,24 @@
 import React, { useState } from 'react'
 import { brandsList } from '../../public/data'
 
-const SearchSelectMenue = ({ setProductsData }) => {
+const SearchSelectMenue = ({ setProductsData, setOpenMenue }) => {
   const [brand, setBrand] = useState('')
 
-  const fetchProductsByBrand = async () => {
+  const fetchProductsByBrand = async value => {
+    setOpenMenue(false)
+    setProductsData([])
+    setBrand(value)
+    console.log('onclick', brand)
+
     const req = await fetch(
       `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
     )
 
     const data = await req.json()
 
-    setProductsData(data)
+    setTimeout(() => {
+      setProductsData(data)
+    }, 1500)
   }
 
   return (
@@ -22,8 +29,7 @@ const SearchSelectMenue = ({ setProductsData }) => {
         id='brand'
         className='outline-none border-b-2 border-backYellow'
         onChange={e => {
-          setBrand(e.target.value)
-          fetchProductsByBrand()
+          fetchProductsByBrand(e.target.value)
         }}
       >
         {brandsList.map(option => (

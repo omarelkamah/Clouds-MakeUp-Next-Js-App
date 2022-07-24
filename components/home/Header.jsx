@@ -11,8 +11,8 @@ const Header = () => {
           The Makeup e-commerce project
         </h1>
         <p className='font-base leading-6 my-5'>
-          This project is built with data from a MakeUp API using Axios,
-          Tailwind CSS, ReactJS, PropTypes, React Context API and React Router.
+          This project is built with data from a MakeUp API using Next js,
+          Tailwind CSS, Redux toolkit
         </p>
         <p className='font-base leading-6 mb-5'>
           Webtwo ipsum divvyshot. disqus elgg klout. Jumo wufoo hulu spotify
