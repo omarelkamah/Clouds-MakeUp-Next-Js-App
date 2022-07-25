@@ -1,24 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 const SearchSidebarLinks = ({ setProductsData, setOpenMenue }) => {
-  const [link, setLink] = useState('')
-  // const prevLinkState = useRef()
+  // TODO: Fix this ERROR
 
   const handelLinkClick = async value => {
     setOpenMenue(false)
-    setLink(value)
-
     setProductsData([])
-    console.log('link', link)
 
     const req = await fetch(
-      `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${link}`
+      `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${value}`
     )
 
     const data = await req.json()
 
     setTimeout(() => {
       setProductsData(data)
+      console.log(data[0])
     }, 1500)
   }
 
