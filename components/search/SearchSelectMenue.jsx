@@ -7,7 +7,9 @@ const SearchSelectMenue = ({ setProductsData, setOpenMenue }) => {
     setProductsData([])
 
     const req = await fetch(
-      `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${value}`
+      `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${
+        value !== 'all' ? value : ''
+      }`
     )
 
     const data = await req.json()
@@ -18,8 +20,10 @@ const SearchSelectMenue = ({ setProductsData, setOpenMenue }) => {
   }
 
   return (
-    <div className='mb-2 '>
-      <h3 className='font-krona font-bold mb-4 text-sm '>brand</h3>
+    <div className='my-6 p-4'>
+      <h3 className='font-krona font-bold text-backLightDark mb-4 text-sm '>
+        brand
+      </h3>
       <select
         name='brand'
         id='brand'
