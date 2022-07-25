@@ -2,16 +2,12 @@ import React, { useState } from 'react'
 import { brandsList } from '../../public/data'
 
 const SearchSelectMenue = ({ setProductsData, setOpenMenue }) => {
-  const [brand, setBrand] = useState('')
-
   const fetchProductsByBrand = async value => {
     setOpenMenue(false)
     setProductsData([])
-    setBrand(value)
-    console.log('onclick', brand)
 
     const req = await fetch(
-      `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
+      `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${value}`
     )
 
     const data = await req.json()

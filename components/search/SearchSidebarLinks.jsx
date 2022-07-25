@@ -15,7 +15,6 @@ const SearchSidebarLinks = ({ setProductsData, setOpenMenue }) => {
 
     setTimeout(() => {
       setProductsData(data)
-      console.log(data[0])
     }, 1500)
   }
 
