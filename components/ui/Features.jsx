@@ -1,6 +1,7 @@
 import React from 'react'
-import { FaOpencart } from 'react-icons/fa'
-import { AiFillHeart } from 'react-icons/ai'
+import { TbTruckDelivery } from 'react-icons/tb'
+import { CgShoppingBag } from 'react-icons/cg'
+import { MdOutlinePayment } from 'react-icons/md'
 
 const Features = () => {
   return (
@@ -8,7 +9,7 @@ const Features = () => {
       <div className='flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 my-5'>
         <div className='flex '>
           <span className='bg-backYellow w-7 h-7 rounded-[50%] block absolute -z-10'></span>
-          <AiFillHeart className='text-4xl ml-3' />
+          <TbTruckDelivery className='text-4xl ml-3' />
         </div>
         <div>
           <h3 className='font-krona font-bold mb-1'>Delivery</h3>
@@ -21,7 +22,7 @@ const Features = () => {
       <div className='flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 my-5'>
         <div className='flex '>
           <span className='bg-backYellow w-7 h-7 rounded-[50%] block absolute -z-10'></span>
-          <AiFillHeart className='text-4xl ml-3' />
+          <CgShoppingBag className='text-4xl ml-3' />
         </div>
         <div>
           <h3 className='font-krona font-bold mb-1'>Products</h3>
@@ -34,7 +35,7 @@ const Features = () => {
       <div className='flex flex-col sm:flex-row gap-4 items-center sm:items-start text-center sm:text-left my-5'>
         <div className='flex '>
           <span className='bg-backYellow w-7 h-7 rounded-[50%] block absolute -z-10'></span>
-          <AiFillHeart className='text-4xl ml-3' />
+          <MdOutlinePayment className='text-4xl ml-3' />
         </div>
         <div>
           <h3 className='font-krona font-bold mb-1'>Payments</h3>
