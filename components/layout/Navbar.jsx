@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className='hidden sm:flex items-center gap-4'>
         <div className='text-xs flex gap-8'>
           <Link href='/'>home</Link>
-          <Link href='/search'>search</Link>
+          <Link href='/search'>filter</Link>
           <Link href='/about'>about</Link>
         </div>
         {session ? (

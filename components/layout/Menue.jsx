@@ -29,7 +29,7 @@ const Menue = ({
           <a onClick={() => setShowMenue(false)}>home</a>
         </Link>
         <Link href='/search'>
-          <a onClick={() => setShowMenue(false)}>search</a>
+          <a onClick={() => setShowMenue(false)}>filter</a>
         </Link>
         <Link href='/about'>
           <a onClick={() => setShowMenue(false)}>about</a>
