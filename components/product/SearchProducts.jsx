@@ -13,7 +13,7 @@ const SearchProducts = ({ products }) => {
             id={product.id}
             name={product.name}
             price={product.price}
-            image={product.image_link}
+            image={product.api_featured_image}
             category={product.category}
           />
         ))

@@ -15,7 +15,7 @@ const Products = ({ products }) => {
               key={product.id}
               id={product.id}
               name={product.name}
-              image={product.image_link}
+              image={product.api_featured_image}
               price={product.price}
               category={product.category}
             />

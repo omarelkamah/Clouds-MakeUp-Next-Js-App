@@ -18,6 +18,8 @@ const nextConfig = {
       "www.benefitcosmetics.com",
       "www.smashbox.com",
       "lh3.googleusercontent.com",
+      "images",
+      "https",
     ],
   },
 };

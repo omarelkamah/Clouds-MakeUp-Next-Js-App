@@ -69,7 +69,7 @@ const SingleProduct = ({ product, id, getSimilarProducts }) => {
       <div className='flex flex-wrap gap-16 my-10'>
         <div className='h-80 w-80 relative'>
           <Image
-            src={product.image_link}
+            src={`https://${product.api_featured_image}`}
             layout='fill'
             objectFit='cover'
             alt='Product'
@@ -125,7 +125,7 @@ const SingleProduct = ({ product, id, getSimilarProducts }) => {
               key={similarProduct.id}
               id={similarProduct.id}
               name={similarProduct.name}
-              image={similarProduct.image_link}
+              image={product.api_featured_image}
               price={similarProduct.price}
               category={product.category}
             />
