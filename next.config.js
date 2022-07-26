@@ -21,6 +21,7 @@ const nextConfig = {
       "images",
       "https",
       "https://vercel.com/",
+      "https://clouds-make.vercel.app/",
     ],
   },
 };
