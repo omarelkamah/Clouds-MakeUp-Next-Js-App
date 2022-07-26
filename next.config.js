@@ -20,6 +20,7 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "images",
       "https",
+      "https://vercel.com/",
     ],
   },
 };
