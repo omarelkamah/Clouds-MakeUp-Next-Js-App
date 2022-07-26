@@ -20,7 +20,7 @@ const WishListPage = () => {
           key={product.id}
           product={product}
           name={product.name}
-          image={product.image_link}
+          image={product.api_featured_image}
           price={product.price}
           category={product.category}
         />

@@ -12,7 +12,7 @@ const WishListProduct = ({ product, name, image, price, category }) => {
     <div className='flex flex-col sm:flex-row flex-wrap items-center justify-around gap-3 mb-6 hover:shadow-lg transition-all py-4'>
       <div className='relative'>
         <Image
-          src={image}
+          src={`https://${image}`}
           alt='product'
           layout=''
           width='200px'

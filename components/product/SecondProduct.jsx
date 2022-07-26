@@ -9,7 +9,13 @@ const SecondProduct = ({ product, name, image, price, category, count }) => {
   return (
     <div className='flex flex-col sm:flex-row  flex-wrap items-center justify-around gap-3 mb-6 hover:shadow-lg transition-all py-4'>
       <div className='relative'>
-        <Image src={image} alt={name} layout='' width='200px' height='200px' />
+        <Image
+          src={`https://${image}`}
+          alt={name}
+          layout=''
+          width='200px'
+          height='200px'
+        />
       </div>
       <div>
         <h3 className='font-krona mb-3'>
