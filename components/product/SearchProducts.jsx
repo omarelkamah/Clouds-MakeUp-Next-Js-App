@@ -3,7 +3,6 @@ import Product from './Product'
 import Loader from '../ui/Loader'
 
 const SearchProducts = ({ products }) => {
-  // console.log(products)
   return (
     <div className='flex flex-wrap mb-16 mt-5 flex-1 justify-center'>
       {products.length !== 0 ? (
