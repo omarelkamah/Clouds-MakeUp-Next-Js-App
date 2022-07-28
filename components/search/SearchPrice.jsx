@@ -1,23 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const SearchPrice = ({ setProductsData }) => {
-  //TODO: FIX THIS ERROR!!!
-  // const [min, setMin] = useState('')
-  // const [max, setMax] = useState('')
+  const minRef = useRef()
+  const maxRef = useRef()
 
-  const fetchDataByPrice = async minAndMax => {
-    let min = minAndMax.min
-    let max = minAndMax.max
+  const fetchDataByPrice = async () => {
+    const min = minRef.current.value
+    const max = maxRef.current.value
 
-    console.log(min, max)
     setProductsData([])
+
     const req = await fetch(
       `https://makeup-api.herokuapp.com/api/v1/products.json?price_greater_than=${Number(
         min
       )}&price_less_than=${Number(max)}`
     )
+
     const data = await req.json()
-    setProductsData(data)
+
+    setTimeout(() => {
+      setProductsData(data)
+    }, 1500)
   }
 
   return (
@@ -28,12 +31,10 @@ const SearchPrice = ({ setProductsData }) => {
           <input
             type='number'
             id='min'
+            ref={minRef}
             placeholder='min'
             className='p-1 w-16 text-center outline-backYellow mb-1'
-            // onChange={e => setMin(e.target.value)}
-            onBlur={e => {
-              fetchDataByPrice({ min: e.target.value })
-            }}
+            onBlur={fetchDataByPrice}
           />
           <span>min</span>
         </div>
@@ -45,13 +46,10 @@ const SearchPrice = ({ setProductsData }) => {
           <input
             type='number'
             id='max'
+            ref={maxRef}
             placeholder='max'
             className='p-1 w-16 text-center outline-backYellow mb-1'
-            // onChange={e => setMax(e.target.value)}
-            onBlur={e => {
-              // setMax(e.target.value)
-              fetchDataByPrice({ max: e.target.value })
-            }}
+            onBlur={fetchDataByPrice}
           />
           <span>max</span>
         </div>
