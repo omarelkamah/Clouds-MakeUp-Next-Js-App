@@ -67,7 +67,7 @@ const SingleProduct = ({ product, id, getSimilarProducts }) => {
         <p className='text-backGray'>{product.brand}</p>
       </div>
       <div className='flex flex-wrap gap-16 my-10'>
-        <div className='h-80 w-80 relative'>
+        <div className='h-80 w-full sm:w-80 relative'>
           <Image
             src={`https://${product.api_featured_image}`}
             layout='fill'
