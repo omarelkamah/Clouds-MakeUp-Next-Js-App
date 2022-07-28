@@ -9,7 +9,7 @@ const Product = ({ id, name, price, image, category }) => {
       <div className='flex w-[250px] flex-col justify-between align-center cursor-pointer rounded-md mb-6 sm:mr-6 px-4 py-6 transform hover:scale-105 hover:shadow-xl transition delay-50 duration-300 ease-in-out'>
         <div className='h-40 relative'>
           <Image
-            src={`https://clouds-make.vercel.app/${image}`}
+            src={`http://${image}`}
             layout='fill'
             objectFit='cover'
             alt='Product'

@@ -89,7 +89,7 @@ const SingleProduct = ({ product, id, getSimilarProducts }) => {
             </Link>
             <h1 className='font-krona'>{product.name}</h1>
           </div>
-          <div className='flex items-center justify-between my-10'>
+          <div className='flex flex-col sm:flex-row gap-3 items-center justify-between my-10'>
             <Price price={product.price} />
             <Counter
               count={amount}

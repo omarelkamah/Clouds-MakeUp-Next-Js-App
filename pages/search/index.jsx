@@ -21,7 +21,7 @@ const SearchPage = ({ products }) => {
   return (
     <div className='container mx-auto'>
       <Poster bottom='0' />
-      <div className='mt-5 flex flex-col sm:flex-row'>
+      <div className='mt-5 flex sm:items-start flex-col sm:flex-row'>
         <SearchSidebar setProductsData={setProductsData} />
         <SearchProducts products={productsData} />
       </div>
